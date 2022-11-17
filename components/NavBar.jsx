@@ -51,26 +51,4 @@ export const NavBar = () => {
     )
 }
 
-/* 
-      <div className="flex flex-col items-center justify-center border" >
-            <div className="flex flex-col">
 
-                <nav className="bg-gray-300 flex justify-around">
-                    <div className="flex items-start" >
-                        <img src={logo} />
-                    </div>
-                    <div className="items-end" >
-                        <a className="text-2xl flex text-gray-600 hover:text-blue-500
-                    cursor-pointer transition-colors duration-300" >
-                            {menu.contact}
-                        </a>
-                        <a className="text-2xl flex text-gray-600 hover:text-blue-500
-                    cursor-pointer transition-colors duration-300" >
-                            {menu.contact}
-                        </a>
-                    </div>
-                </nav>
-            </div>
-        </div>
-
-*/

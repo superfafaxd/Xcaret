@@ -32,10 +32,7 @@ export const appSlice = createSlice({
             state.legals = payload.legals;
             state.prefooter = payload.prefooter;
             state.footer = payload.footer;
-           // console.log(payload.buttonBook)
-            // payload.map(data => (
-            //     console.log(data)
-            // ));
+          
         }
     }
 });

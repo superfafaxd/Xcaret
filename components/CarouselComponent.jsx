@@ -1,13 +1,15 @@
 import { useState, useRef, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useDeviceDetected } from '../hooks/useDeviceDetected';
+import { CarouselItem } from './CarouselItem';
 
 
 
 export const CarouselComponent = () => {
     const { movil, browser } = useDeviceDetected();
+
     const { carousel: carouselData } = useSelector(state => state.app);
-    const { text, desktop, movil: movilData } = carouselData;
+    const { text, desktop, mobile } = carouselData;
 
     const maxScrollWidth = useRef(0);
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -57,7 +59,7 @@ export const CarouselComponent = () => {
     return (
         <div className="carousel my-12 mx-auto">
             <h2 className="text-4xl leading-8 font-semibold mb-12 text-slate-700">
-              {text}
+                {text}
             </h2>
             <div className="relative overflow-hidden">
                 <div className="flex justify-between absolute top left w-full h-full">
@@ -108,32 +110,20 @@ export const CarouselComponent = () => {
                     ref={carousel}
                     className="carousel-container relative flex gap-1 overflow-hidden scroll-smooth snap-x snap-mandatory touch-pan-x z-0"
                 >
-                    {desktop.map((resource, index) => {
-                        return (
-                            <div
-                                key={index}
-                                className="carousel-item text-center relative w-64 h-64 snap-start"
-                            >
-                                <a
-
-                                    className="h-full w-full aspect-square block bg-origin-padding bg-left-top bg-cover bg-no-repeat z-0"
-                                    style={{ backgroundImage: `url(${resource.src || ''})` }}
-                                >
-                                    <img
-                                        src={resource.src || ''}
-                                        alt={resource.alt}
-                                        className="w-full aspect-square hidden"
-                                    />
-                                </a>
-                                <a
-
-                                    className="h-full w-full aspect-square block absolute top-0 left-0 transition-opacity duration-300 opacity-0 hover:opacity-100 bg-blue-800/75 z-10"
-                                >
-                                  
-                                </a>
-                            </div>
-                        );
-                    })}
+                    {
+                        (browser)
+                        ?
+                        desktop.map((resource, index) => {
+                            return (
+                                <CarouselItem key={index} resource={resource} index={index} />
+                            );
+                        })
+                        :mobile.map((resource, index) => {
+                            return (
+                                <CarouselItem  key={index} resource={resource} index={index} />
+                            );
+                        })
+                    }
                 </div>
             </div>
         </div>
