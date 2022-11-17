@@ -1,255 +1,750 @@
 "use strict";
-/*
- * ATTENTION: An "eval-source-map" devtool has been used.
- * This devtool is neither made for production nor for readable output files.
- * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
- * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
- * or disable the default devtool with "devtool: false".
- * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
- */
 (() => {
 var exports = {};
-exports.id = "pages/index";
-exports.ids = ["pages/index"];
+exports.id = 405;
+exports.ids = [405];
 exports.modules = {
 
-/***/ "./components/CarouselComponent.jsx":
-/*!******************************************!*\
-  !*** ./components/CarouselComponent.jsx ***!
-  \******************************************/
+/***/ 188:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"CarouselComponent\": () => (/* binding */ CarouselComponent)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ \"react-redux\");\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _hooks_useDeviceDetected__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../hooks/useDeviceDetected */ \"./hooks/useDeviceDetected.js\");\n/* harmony import */ var _CarouselItem__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./CarouselItem */ \"./components/CarouselItem.jsx\");\n\n\n\n\n\nconst CarouselComponent = ()=>{\n    const { movil , browser  } = (0,_hooks_useDeviceDetected__WEBPACK_IMPORTED_MODULE_3__.useDeviceDetected)();\n    const { carousel: carouselData  } = (0,react_redux__WEBPACK_IMPORTED_MODULE_2__.useSelector)((state)=>state.app);\n    const { text , desktop , mobile  } = carouselData;\n    const maxScrollWidth = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(0);\n    const [currentIndex, setCurrentIndex] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0);\n    const carousel = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(null);\n    const movePrev = ()=>{\n        if (currentIndex > 0) {\n            setCurrentIndex((prevState)=>prevState - 1);\n        }\n    };\n    const moveNext = ()=>{\n        if (carousel.current !== null && carousel.current.offsetWidth * currentIndex <= maxScrollWidth.current) {\n            setCurrentIndex((prevState)=>prevState + 1);\n        }\n    };\n    const isDisabled = (direction)=>{\n        if (direction === \"prev\") {\n            return currentIndex <= 0;\n        }\n        if (direction === \"next\" && carousel.current !== null) {\n            return carousel.current.offsetWidth * currentIndex >= maxScrollWidth.current;\n        }\n        return false;\n    };\n    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(()=>{\n        if (carousel !== null && carousel.current !== null) {\n            carousel.current.scrollLeft = carousel.current.offsetWidth * currentIndex;\n        }\n    }, [\n        currentIndex\n    ]);\n    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(()=>{\n        maxScrollWidth.current = carousel.current ? carousel.current.scrollWidth - carousel.current.offsetWidth : 0;\n    }, []);\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n        className: \"carousel my-12 mx-auto\",\n        children: [\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"h2\", {\n                className: \"text-4xl leading-8 font-semibold mb-12 text-slate-700\",\n                children: text\n            }, void 0, false, {\n                fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\CarouselComponent.jsx\",\n                lineNumber: 61,\n                columnNumber: 13\n            }, undefined),\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                className: \"relative overflow-hidden\",\n                children: [\n                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                        className: \"flex justify-between absolute top left w-full h-full\",\n                        children: [\n                            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"button\", {\n                                onClick: movePrev,\n                                className: \"hover:bg-blue-900/75 text-white w-10 h-full text-center opacity-75 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed z-10 p-0 m-0 transition-all ease-in-out duration-300\",\n                                disabled: isDisabled(\"prev\"),\n                                children: [\n                                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"svg\", {\n                                        xmlns: \"http://www.w3.org/2000/svg\",\n                                        className: \"h-12 w-20 -ml-5\",\n                                        fill: \"none\",\n                                        viewBox: \"0 0 24 24\",\n                                        stroke: \"currentColor\",\n                                        strokeWidth: 2,\n                                        children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"path\", {\n                                            strokeLinecap: \"round\",\n                                            strokeLinejoin: \"round\",\n                                            d: \"M15 19l-7-7 7-7\"\n                                        }, void 0, false, {\n                                            fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\CarouselComponent.jsx\",\n                                            lineNumber: 79,\n                                            columnNumber: 29\n                                        }, undefined)\n                                    }, void 0, false, {\n                                        fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\CarouselComponent.jsx\",\n                                        lineNumber: 71,\n                                        columnNumber: 25\n                                    }, undefined),\n                                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"span\", {\n                                        className: \"sr-only\",\n                                        children: \"Prev\"\n                                    }, void 0, false, {\n                                        fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\CarouselComponent.jsx\",\n                                        lineNumber: 85,\n                                        columnNumber: 25\n                                    }, undefined)\n                                ]\n                            }, void 0, true, {\n                                fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\CarouselComponent.jsx\",\n                                lineNumber: 66,\n                                columnNumber: 21\n                            }, undefined),\n                            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"button\", {\n                                onClick: moveNext,\n                                className: \"hover:bg-blue-900/75 text-white w-10 h-full text-center opacity-75 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed z-10 p-0 m-0 transition-all ease-in-out duration-300\",\n                                disabled: isDisabled(\"next\"),\n                                children: [\n                                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"svg\", {\n                                        xmlns: \"http://www.w3.org/2000/svg\",\n                                        className: \"h-12 w-20 -ml-5\",\n                                        fill: \"none\",\n                                        viewBox: \"0 0 24 24\",\n                                        stroke: \"currentColor\",\n                                        strokeWidth: 2,\n                                        children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"path\", {\n                                            strokeLinecap: \"round\",\n                                            strokeLinejoin: \"round\",\n                                            d: \"M9 5l7 7-7 7\"\n                                        }, void 0, false, {\n                                            fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\CarouselComponent.jsx\",\n                                            lineNumber: 100,\n                                            columnNumber: 29\n                                        }, undefined)\n                                    }, void 0, false, {\n                                        fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\CarouselComponent.jsx\",\n                                        lineNumber: 92,\n                                        columnNumber: 25\n                                    }, undefined),\n                                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"span\", {\n                                        className: \"sr-only\",\n                                        children: \"Next\"\n                                    }, void 0, false, {\n                                        fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\CarouselComponent.jsx\",\n                                        lineNumber: 106,\n                                        columnNumber: 25\n                                    }, undefined)\n                                ]\n                            }, void 0, true, {\n                                fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\CarouselComponent.jsx\",\n                                lineNumber: 87,\n                                columnNumber: 21\n                            }, undefined)\n                        ]\n                    }, void 0, true, {\n                        fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\CarouselComponent.jsx\",\n                        lineNumber: 65,\n                        columnNumber: 17\n                    }, undefined),\n                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                        ref: carousel,\n                        className: \"carousel-container relative flex gap-1 overflow-hidden scroll-smooth snap-x snap-mandatory touch-pan-x z-0\",\n                        children: browser ? desktop.map((resource, index)=>{\n                            return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_CarouselItem__WEBPACK_IMPORTED_MODULE_4__.CarouselItem, {\n                                resource: resource,\n                                index: index\n                            }, index, false, {\n                                fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\CarouselComponent.jsx\",\n                                lineNumber: 118,\n                                columnNumber: 33\n                            }, undefined);\n                        }) : mobile.map((resource, index)=>{\n                            return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_CarouselItem__WEBPACK_IMPORTED_MODULE_4__.CarouselItem, {\n                                resource: resource,\n                                index: index\n                            }, index, false, {\n                                fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\CarouselComponent.jsx\",\n                                lineNumber: 123,\n                                columnNumber: 33\n                            }, undefined);\n                        })\n                    }, void 0, false, {\n                        fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\CarouselComponent.jsx\",\n                        lineNumber: 109,\n                        columnNumber: 17\n                    }, undefined)\n                ]\n            }, void 0, true, {\n                fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\CarouselComponent.jsx\",\n                lineNumber: 64,\n                columnNumber: 13\n            }, undefined)\n        ]\n    }, void 0, true, {\n        fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\CarouselComponent.jsx\",\n        lineNumber: 60,\n        columnNumber: 9\n    }, undefined);\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9jb21wb25lbnRzL0Nhcm91c2VsQ29tcG9uZW50LmpzeC5qcyIsIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7QUFBQTtBQUFvRDtBQUNWO0FBQ3FCO0FBQ2pCO0FBSXZDLE1BQU1NLG9CQUFvQixJQUFNO0lBQ25DLE1BQU0sRUFBRUMsTUFBSyxFQUFFQyxRQUFPLEVBQUUsR0FBR0osMkVBQWlCQTtJQUU1QyxNQUFNLEVBQUVLLFVBQVVDLGFBQVksRUFBRSxHQUFHUCx3REFBV0EsQ0FBQ1EsQ0FBQUEsUUFBU0EsTUFBTUMsR0FBRztJQUNqRSxNQUFNLEVBQUVDLEtBQUksRUFBRUMsUUFBTyxFQUFFQyxPQUFNLEVBQUUsR0FBR0w7SUFFbEMsTUFBTU0saUJBQWlCZiw2Q0FBTUEsQ0FBQztJQUM5QixNQUFNLENBQUNnQixjQUFjQyxnQkFBZ0IsR0FBR2xCLCtDQUFRQSxDQUFDO0lBQ2pELE1BQU1TLFdBQVdSLDZDQUFNQSxDQUFDLElBQUk7SUFFNUIsTUFBTWtCLFdBQVcsSUFBTTtRQUNuQixJQUFJRixlQUFlLEdBQUc7WUFDbEJDLGdCQUFnQixDQUFDRSxZQUFjQSxZQUFZO1FBQy9DLENBQUM7SUFDTDtJQUVBLE1BQU1DLFdBQVcsSUFBTTtRQUNuQixJQUNJWixTQUFTYSxPQUFPLEtBQUssSUFBSSxJQUN6QmIsU0FBU2EsT0FBTyxDQUFDQyxXQUFXLEdBQUdOLGdCQUFnQkQsZUFBZU0sT0FBTyxFQUN2RTtZQUNFSixnQkFBZ0IsQ0FBQ0UsWUFBY0EsWUFBWTtRQUMvQyxDQUFDO0lBQ0w7SUFFQSxNQUFNSSxhQUFhLENBQUNDLFlBQWM7UUFDOUIsSUFBSUEsY0FBYyxRQUFRO1lBQ3RCLE9BQU9SLGdCQUFnQjtRQUMzQixDQUFDO1FBRUQsSUFBSVEsY0FBYyxVQUFVaEIsU0FBU2EsT0FBTyxLQUFLLElBQUksRUFBRTtZQUNuRCxPQUNJYixTQUFTYSxPQUFPLENBQUNDLFdBQVcsR0FBR04sZ0JBQWdCRCxlQUFlTSxPQUFPO1FBRTdFLENBQUM7UUFFRCxPQUFPLEtBQUs7SUFDaEI7SUFFQXBCLGdEQUFTQSxDQUFDLElBQU07UUFDWixJQUFJTyxhQUFhLElBQUksSUFBSUEsU0FBU2EsT0FBTyxLQUFLLElBQUksRUFBRTtZQUNoRGIsU0FBU2EsT0FBTyxDQUFDSSxVQUFVLEdBQUdqQixTQUFTYSxPQUFPLENBQUNDLFdBQVcsR0FBR047UUFDakUsQ0FBQztJQUNMLEdBQUc7UUFBQ0E7S0FBYTtJQUVqQmYsZ0RBQVNBLENBQUMsSUFBTTtRQUNaYyxlQUFlTSxPQUFPLEdBQUdiLFNBQVNhLE9BQU8sR0FDbkNiLFNBQVNhLE9BQU8sQ0FBQ0ssV0FBVyxHQUFHbEIsU0FBU2EsT0FBTyxDQUFDQyxXQUFXLEdBQzNELENBQUM7SUFDWCxHQUFHLEVBQUU7SUFFTCxxQkFDSSw4REFBQ0s7UUFBSUMsV0FBVTs7MEJBQ1gsOERBQUNDO2dCQUFHRCxXQUFVOzBCQUNUaEI7Ozs7OzswQkFFTCw4REFBQ2U7Z0JBQUlDLFdBQVU7O2tDQUNYLDhEQUFDRDt3QkFBSUMsV0FBVTs7MENBQ1gsOERBQUNFO2dDQUNHQyxTQUFTYjtnQ0FDVFUsV0FBVTtnQ0FDVkksVUFBVVQsV0FBVzs7a0RBRXJCLDhEQUFDVTt3Q0FDR0MsT0FBTTt3Q0FDTk4sV0FBVTt3Q0FDVk8sTUFBSzt3Q0FDTEMsU0FBUTt3Q0FDUkMsUUFBTzt3Q0FDUEMsYUFBYTtrREFFYiw0RUFBQ0M7NENBQ0dDLGVBQWM7NENBQ2RDLGdCQUFlOzRDQUNmQyxHQUFFOzs7Ozs7Ozs7OztrREFHViw4REFBQ0M7d0NBQUtmLFdBQVU7a0RBQVU7Ozs7Ozs7Ozs7OzswQ0FFOUIsOERBQUNFO2dDQUNHQyxTQUFTWDtnQ0FDVFEsV0FBVTtnQ0FDVkksVUFBVVQsV0FBVzs7a0RBRXJCLDhEQUFDVTt3Q0FDR0MsT0FBTTt3Q0FDTk4sV0FBVTt3Q0FDVk8sTUFBSzt3Q0FDTEMsU0FBUTt3Q0FDUkMsUUFBTzt3Q0FDUEMsYUFBYTtrREFFYiw0RUFBQ0M7NENBQ0dDLGVBQWM7NENBQ2RDLGdCQUFlOzRDQUNmQyxHQUFFOzs7Ozs7Ozs7OztrREFHViw4REFBQ0M7d0NBQUtmLFdBQVU7a0RBQVU7Ozs7Ozs7Ozs7Ozs7Ozs7OztrQ0FHbEMsOERBQUNEO3dCQUNHaUIsS0FBS3BDO3dCQUNMb0IsV0FBVTtrQ0FHTixVQUVBZixRQUFRZ0MsR0FBRyxDQUFDLENBQUNDLFVBQVVDLFFBQVU7NEJBQzdCLHFCQUNJLDhEQUFDM0MsdURBQVlBO2dDQUFhMEMsVUFBVUE7Z0NBQVVDLE9BQU9BOytCQUFsQ0E7Ozs7O3dCQUUzQixLQUNDakMsT0FBTytCLEdBQUcsQ0FBQyxDQUFDQyxVQUFVQyxRQUFVOzRCQUM3QixxQkFDSSw4REFBQzNDLHVEQUFZQTtnQ0FBYzBDLFVBQVVBO2dDQUFVQyxPQUFPQTsrQkFBbENBOzs7Ozt3QkFFNUIsRUFBRTs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBTTFCLEVBQUMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly94Y2FyZXQvLi9jb21wb25lbnRzL0Nhcm91c2VsQ29tcG9uZW50LmpzeD9kYTBlIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IHVzZVN0YXRlLCB1c2VSZWYsIHVzZUVmZmVjdCB9IGZyb20gJ3JlYWN0JztcclxuaW1wb3J0IHsgdXNlU2VsZWN0b3IgfSBmcm9tICdyZWFjdC1yZWR1eCc7XHJcbmltcG9ydCB7IHVzZURldmljZURldGVjdGVkIH0gZnJvbSAnLi4vaG9va3MvdXNlRGV2aWNlRGV0ZWN0ZWQnO1xyXG5pbXBvcnQgeyBDYXJvdXNlbEl0ZW0gfSBmcm9tICcuL0Nhcm91c2VsSXRlbSc7XHJcblxyXG5cclxuXHJcbmV4cG9ydCBjb25zdCBDYXJvdXNlbENvbXBvbmVudCA9ICgpID0+IHtcclxuICAgIGNvbnN0IHsgbW92aWwsIGJyb3dzZXIgfSA9IHVzZURldmljZURldGVjdGVkKCk7XHJcblxyXG4gICAgY29uc3QgeyBjYXJvdXNlbDogY2Fyb3VzZWxEYXRhIH0gPSB1c2VTZWxlY3RvcihzdGF0ZSA9PiBzdGF0ZS5hcHApO1xyXG4gICAgY29uc3QgeyB0ZXh0LCBkZXNrdG9wLCBtb2JpbGUgfSA9IGNhcm91c2VsRGF0YTtcclxuXHJcbiAgICBjb25zdCBtYXhTY3JvbGxXaWR0aCA9IHVzZVJlZigwKTtcclxuICAgIGNvbnN0IFtjdXJyZW50SW5kZXgsIHNldEN1cnJlbnRJbmRleF0gPSB1c2VTdGF0ZSgwKTtcclxuICAgIGNvbnN0IGNhcm91c2VsID0gdXNlUmVmKG51bGwpO1xyXG5cclxuICAgIGNvbnN0IG1vdmVQcmV2ID0gKCkgPT4ge1xyXG4gICAgICAgIGlmIChjdXJyZW50SW5kZXggPiAwKSB7XHJcbiAgICAgICAgICAgIHNldEN1cnJlbnRJbmRleCgocHJldlN0YXRlKSA9PiBwcmV2U3RhdGUgLSAxKTtcclxuICAgICAgICB9XHJcbiAgICB9O1xyXG5cclxuICAgIGNvbnN0IG1vdmVOZXh0ID0gKCkgPT4ge1xyXG4gICAgICAgIGlmIChcclxuICAgICAgICAgICAgY2Fyb3VzZWwuY3VycmVudCAhPT0gbnVsbCAmJlxyXG4gICAgICAgICAgICBjYXJvdXNlbC5jdXJyZW50Lm9mZnNldFdpZHRoICogY3VycmVudEluZGV4IDw9IG1heFNjcm9sbFdpZHRoLmN1cnJlbnRcclxuICAgICAgICApIHtcclxuICAgICAgICAgICAgc2V0Q3VycmVudEluZGV4KChwcmV2U3RhdGUpID0+IHByZXZTdGF0ZSArIDEpO1xyXG4gICAgICAgIH1cclxuICAgIH07XHJcblxyXG4gICAgY29uc3QgaXNEaXNhYmxlZCA9IChkaXJlY3Rpb24pID0+IHtcclxuICAgICAgICBpZiAoZGlyZWN0aW9uID09PSAncHJldicpIHtcclxuICAgICAgICAgICAgcmV0dXJuIGN1cnJlbnRJbmRleCA8PSAwO1xyXG4gICAgICAgIH1cclxuXHJcbiAgICAgICAgaWYgKGRpcmVjdGlvbiA9PT0gJ25leHQnICYmIGNhcm91c2VsLmN1cnJlbnQgIT09IG51bGwpIHtcclxuICAgICAgICAgICAgcmV0dXJuIChcclxuICAgICAgICAgICAgICAgIGNhcm91c2VsLmN1cnJlbnQub2Zmc2V0V2lkdGggKiBjdXJyZW50SW5kZXggPj0gbWF4U2Nyb2xsV2lkdGguY3VycmVudFxyXG4gICAgICAgICAgICApO1xyXG4gICAgICAgIH1cclxuXHJcbiAgICAgICAgcmV0dXJuIGZhbHNlO1xyXG4gICAgfTtcclxuXHJcbiAgICB1c2VFZmZlY3QoKCkgPT4ge1xyXG4gICAgICAgIGlmIChjYXJvdXNlbCAhPT0gbnVsbCAmJiBjYXJvdXNlbC5jdXJyZW50ICE9PSBudWxsKSB7XHJcbiAgICAgICAgICAgIGNhcm91c2VsLmN1cnJlbnQuc2Nyb2xsTGVmdCA9IGNhcm91c2VsLmN1cnJlbnQub2Zmc2V0V2lkdGggKiBjdXJyZW50SW5kZXg7XHJcbiAgICAgICAgfVxyXG4gICAgfSwgW2N1cnJlbnRJbmRleF0pO1xyXG5cclxuICAgIHVzZUVmZmVjdCgoKSA9PiB7XHJcbiAgICAgICAgbWF4U2Nyb2xsV2lkdGguY3VycmVudCA9IGNhcm91c2VsLmN1cnJlbnRcclxuICAgICAgICAgICAgPyBjYXJvdXNlbC5jdXJyZW50LnNjcm9sbFdpZHRoIC0gY2Fyb3VzZWwuY3VycmVudC5vZmZzZXRXaWR0aFxyXG4gICAgICAgICAgICA6IDA7XHJcbiAgICB9LCBbXSk7XHJcblxyXG4gICAgcmV0dXJuIChcclxuICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImNhcm91c2VsIG15LTEyIG14LWF1dG9cIj5cclxuICAgICAgICAgICAgPGgyIGNsYXNzTmFtZT1cInRleHQtNHhsIGxlYWRpbmctOCBmb250LXNlbWlib2xkIG1iLTEyIHRleHQtc2xhdGUtNzAwXCI+XHJcbiAgICAgICAgICAgICAgICB7dGV4dH1cclxuICAgICAgICAgICAgPC9oMj5cclxuICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJyZWxhdGl2ZSBvdmVyZmxvdy1oaWRkZW5cIj5cclxuICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZmxleCBqdXN0aWZ5LWJldHdlZW4gYWJzb2x1dGUgdG9wIGxlZnQgdy1mdWxsIGgtZnVsbFwiPlxyXG4gICAgICAgICAgICAgICAgICAgIDxidXR0b25cclxuICAgICAgICAgICAgICAgICAgICAgICAgb25DbGljaz17bW92ZVByZXZ9XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIGNsYXNzTmFtZT1cImhvdmVyOmJnLWJsdWUtOTAwLzc1IHRleHQtd2hpdGUgdy0xMCBoLWZ1bGwgdGV4dC1jZW50ZXIgb3BhY2l0eS03NSBob3ZlcjpvcGFjaXR5LTEwMCBkaXNhYmxlZDpvcGFjaXR5LTI1IGRpc2FibGVkOmN1cnNvci1ub3QtYWxsb3dlZCB6LTEwIHAtMCBtLTAgdHJhbnNpdGlvbi1hbGwgZWFzZS1pbi1vdXQgZHVyYXRpb24tMzAwXCJcclxuICAgICAgICAgICAgICAgICAgICAgICAgZGlzYWJsZWQ9e2lzRGlzYWJsZWQoJ3ByZXYnKX1cclxuICAgICAgICAgICAgICAgICAgICA+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDxzdmdcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIHhtbG5zPVwiaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmdcIlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPVwiaC0xMiB3LTIwIC1tbC01XCJcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIGZpbGw9XCJub25lXCJcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIHZpZXdCb3g9XCIwIDAgMjQgMjRcIlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgc3Ryb2tlPVwiY3VycmVudENvbG9yXCJcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIHN0cm9rZVdpZHRoPXsyfVxyXG4gICAgICAgICAgICAgICAgICAgICAgICA+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8cGF0aFxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHN0cm9rZUxpbmVjYXA9XCJyb3VuZFwiXHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiXHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgZD1cIk0xNSAxOWwtNy03IDctN1wiXHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAvPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICA8L3N2Zz5cclxuICAgICAgICAgICAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPVwic3Itb25seVwiPlByZXY8L3NwYW4+XHJcbiAgICAgICAgICAgICAgICAgICAgPC9idXR0b24+XHJcbiAgICAgICAgICAgICAgICAgICAgPGJ1dHRvblxyXG4gICAgICAgICAgICAgICAgICAgICAgICBvbkNsaWNrPXttb3ZlTmV4dH1cclxuICAgICAgICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPVwiaG92ZXI6YmctYmx1ZS05MDAvNzUgdGV4dC13aGl0ZSB3LTEwIGgtZnVsbCB0ZXh0LWNlbnRlciBvcGFjaXR5LTc1IGhvdmVyOm9wYWNpdHktMTAwIGRpc2FibGVkOm9wYWNpdHktMjUgZGlzYWJsZWQ6Y3Vyc29yLW5vdC1hbGxvd2VkIHotMTAgcC0wIG0tMCB0cmFuc2l0aW9uLWFsbCBlYXNlLWluLW91dCBkdXJhdGlvbi0zMDBcIlxyXG4gICAgICAgICAgICAgICAgICAgICAgICBkaXNhYmxlZD17aXNEaXNhYmxlZCgnbmV4dCcpfVxyXG4gICAgICAgICAgICAgICAgICAgID5cclxuICAgICAgICAgICAgICAgICAgICAgICAgPHN2Z1xyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgeG1sbnM9XCJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Z1wiXHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICBjbGFzc05hbWU9XCJoLTEyIHctMjAgLW1sLTVcIlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgZmlsbD1cIm5vbmVcIlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgdmlld0JveD1cIjAgMCAyNCAyNFwiXHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICBzdHJva2U9XCJjdXJyZW50Q29sb3JcIlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgc3Ryb2tlV2lkdGg9ezJ9XHJcbiAgICAgICAgICAgICAgICAgICAgICAgID5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxwYXRoXHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgc3Ryb2tlTGluZWNhcD1cInJvdW5kXCJcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBzdHJva2VMaW5lam9pbj1cInJvdW5kXCJcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBkPVwiTTkgNWw3IDctNyA3XCJcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIC8+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDwvc3ZnPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJzci1vbmx5XCI+TmV4dDwvc3Bhbj5cclxuICAgICAgICAgICAgICAgICAgICA8L2J1dHRvbj5cclxuICAgICAgICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgICAgICAgICAgPGRpdlxyXG4gICAgICAgICAgICAgICAgICAgIHJlZj17Y2Fyb3VzZWx9XHJcbiAgICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPVwiY2Fyb3VzZWwtY29udGFpbmVyIHJlbGF0aXZlIGZsZXggZ2FwLTEgb3ZlcmZsb3ctaGlkZGVuIHNjcm9sbC1zbW9vdGggc25hcC14IHNuYXAtbWFuZGF0b3J5IHRvdWNoLXBhbi14IHotMFwiXHJcbiAgICAgICAgICAgICAgICA+XHJcbiAgICAgICAgICAgICAgICAgICAge1xyXG4gICAgICAgICAgICAgICAgICAgICAgICAoYnJvd3NlcilcclxuICAgICAgICAgICAgICAgICAgICAgICAgP1xyXG4gICAgICAgICAgICAgICAgICAgICAgICBkZXNrdG9wLm1hcCgocmVzb3VyY2UsIGluZGV4KSA9PiB7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICByZXR1cm4gKFxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxDYXJvdXNlbEl0ZW0ga2V5PXtpbmRleH0gcmVzb3VyY2U9e3Jlc291cmNlfSBpbmRleD17aW5kZXh9IC8+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICApO1xyXG4gICAgICAgICAgICAgICAgICAgICAgICB9KVxyXG4gICAgICAgICAgICAgICAgICAgICAgICA6bW9iaWxlLm1hcCgocmVzb3VyY2UsIGluZGV4KSA9PiB7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICByZXR1cm4gKFxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxDYXJvdXNlbEl0ZW0gIGtleT17aW5kZXh9IHJlc291cmNlPXtyZXNvdXJjZX0gaW5kZXg9e2luZGV4fSAvPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgKTtcclxuICAgICAgICAgICAgICAgICAgICAgICAgfSlcclxuICAgICAgICAgICAgICAgICAgICB9XHJcbiAgICAgICAgICAgICAgICA8L2Rpdj5cclxuICAgICAgICAgICAgPC9kaXY+XHJcbiAgICAgICAgPC9kaXY+XHJcbiAgICApXHJcbn1cclxuXHJcblxyXG5cclxuXHJcblxyXG5cclxuXHJcbiJdLCJuYW1lcyI6WyJ1c2VTdGF0ZSIsInVzZVJlZiIsInVzZUVmZmVjdCIsInVzZVNlbGVjdG9yIiwidXNlRGV2aWNlRGV0ZWN0ZWQiLCJDYXJvdXNlbEl0ZW0iLCJDYXJvdXNlbENvbXBvbmVudCIsIm1vdmlsIiwiYnJvd3NlciIsImNhcm91c2VsIiwiY2Fyb3VzZWxEYXRhIiwic3RhdGUiLCJhcHAiLCJ0ZXh0IiwiZGVza3RvcCIsIm1vYmlsZSIsIm1heFNjcm9sbFdpZHRoIiwiY3VycmVudEluZGV4Iiwic2V0Q3VycmVudEluZGV4IiwibW92ZVByZXYiLCJwcmV2U3RhdGUiLCJtb3ZlTmV4dCIsImN1cnJlbnQiLCJvZmZzZXRXaWR0aCIsImlzRGlzYWJsZWQiLCJkaXJlY3Rpb24iLCJzY3JvbGxMZWZ0Iiwic2Nyb2xsV2lkdGgiLCJkaXYiLCJjbGFzc05hbWUiLCJoMiIsImJ1dHRvbiIsIm9uQ2xpY2siLCJkaXNhYmxlZCIsInN2ZyIsInhtbG5zIiwiZmlsbCIsInZpZXdCb3giLCJzdHJva2UiLCJzdHJva2VXaWR0aCIsInBhdGgiLCJzdHJva2VMaW5lY2FwIiwic3Ryb2tlTGluZWpvaW4iLCJkIiwic3BhbiIsInJlZiIsIm1hcCIsInJlc291cmNlIiwiaW5kZXgiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./components/CarouselComponent.jsx\n");
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  "default": () => (/* binding */ pages)
+});
+
+// EXTERNAL MODULE: external "react/jsx-runtime"
+var jsx_runtime_ = __webpack_require__(997);
+;// CONCATENATED MODULE: external "next/head"
+const head_namespaceObject = require("next/head");
+var head_default = /*#__PURE__*/__webpack_require__.n(head_namespaceObject);
+// EXTERNAL MODULE: external "react-redux"
+var external_react_redux_ = __webpack_require__(22);
+// EXTERNAL MODULE: ./store/data/appSlice.js
+var appSlice = __webpack_require__(23);
+;// CONCATENATED MODULE: external "isomorphic-fetch"
+const external_isomorphic_fetch_namespaceObject = require("isomorphic-fetch");
+var external_isomorphic_fetch_default = /*#__PURE__*/__webpack_require__.n(external_isomorphic_fetch_namespaceObject);
+;// CONCATENATED MODULE: external "next/router"
+const router_namespaceObject = require("next/router");
+;// CONCATENATED MODULE: ./hooks/useLanguage.js
+
+
+
+const useLanguage = ()=>{
+    const dispatch = (0,external_react_redux_.useDispatch)();
+    const router = (0,router_namespaceObject.useRouter)();
+    const { locale  } = router;
+    dispatch((0,appSlice/* onLanguage */.jE)(locale));
+    return {
+        locale
+    };
+};
+
+;// CONCATENATED MODULE: ./components/NavBar.jsx
+
+
+const NavBar = ()=>{
+    const { navbar  } = (0,external_react_redux_.useSelector)((state)=>state.app);
+    const { logo , menu  } = navbar;
+    return /*#__PURE__*/ jsx_runtime_.jsx("div", {
+        className: "shadow bg-gray-200",
+        children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+            className: "mx-auto p-5 flex items-center justify-between",
+            children: [
+                /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                    className: "cursor-pointer",
+                    children: /*#__PURE__*/ jsx_runtime_.jsx("img", {
+                        className: "h-3 sm:h-7",
+                        src: logo
+                    })
+                }),
+                /*#__PURE__*/ (0,jsx_runtime_.jsxs)("ul", {
+                    className: "flex items-center gap-5",
+                    children: [
+                        /*#__PURE__*/ jsx_runtime_.jsx("li", {
+                            children: /*#__PURE__*/ jsx_runtime_.jsx("a", {
+                                className: "sm:text-2xl text-gray-600 hover:text-blue-500 cursor-pointer transition-colors duration-300",
+                                children: menu.contact
+                            })
+                        }),
+                        /*#__PURE__*/ jsx_runtime_.jsx("li", {
+                            children: /*#__PURE__*/ jsx_runtime_.jsx("a", {
+                                className: "sm:text-2xl text-gray-600 hover:text-blue-500 cursor-pointer transition-colors duration-300",
+                                children: menu.lang.title
+                            })
+                        }),
+                        /*#__PURE__*/ jsx_runtime_.jsx("li", {
+                            children: /*#__PURE__*/ jsx_runtime_.jsx("select", {
+                                className: "text-xs bg-gray-200 text-black ",
+                                children: menu.currency.map((item)=>{
+                                    return /*#__PURE__*/ jsx_runtime_.jsx("option", {
+                                        className: "hover:text-blue-500 cursor-pointer transition-colors duration-300",
+                                        value: item,
+                                        children: item
+                                    }, item);
+                                })
+                            })
+                        })
+                    ]
+                })
+            ]
+        })
+    });
+};
+
+;// CONCATENATED MODULE: ./components/Footer.jsx
+
+
+const Footer = ()=>{
+    const { footer  } = (0,external_react_redux_.useSelector)((state)=>state.app);
+    const { copy , links  } = footer;
+    return /*#__PURE__*/ jsx_runtime_.jsx("div", {
+        className: "",
+        children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("footer", {
+            className: "p-4 shadow md:flex md:items-center md:justify-around md:p-6 bg-black",
+            children: [
+                /*#__PURE__*/ jsx_runtime_.jsx("span", {
+                    className: "text-sm text-white",
+                    children: copy
+                }),
+                /*#__PURE__*/ jsx_runtime_.jsx("ul", {
+                    className: "flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0",
+                    children: links.map((item)=>{
+                        return /*#__PURE__*/ jsx_runtime_.jsx("li", {
+                            children: /*#__PURE__*/ jsx_runtime_.jsx("a", {
+                                href: item.href,
+                                className: "mr-4 hover:underline md:mr-6",
+                                children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("span", {
+                                    className: "text-sm text-white",
+                                    children: [
+                                        " ",
+                                        item.tittle,
+                                        " "
+                                    ]
+                                })
+                            }, item.tittle)
+                        });
+                    })
+                })
+            ]
+        })
+    });
+};
+
+// EXTERNAL MODULE: external "react-device-detect"
+var external_react_device_detect_ = __webpack_require__(599);
+;// CONCATENATED MODULE: ./components/Numbers.jsx
+
+const Numbers = ({ name , number  })=>{
+    return /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+        className: "grid",
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime_.jsxs)("span", {
+                className: "text-xs text-white ",
+                children: [
+                    name,
+                    " "
+                ]
+            }),
+            /*#__PURE__*/ (0,jsx_runtime_.jsxs)("span", {
+                className: "text-xs text-white m-0.5",
+                children: [
+                    " ",
+                    number,
+                    " "
+                ]
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./components/SocialNetworks.jsx
+
+const SocialNetworks = ()=>{
+    return /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+        className: "m-1 flex justify-center",
+        children: [
+            /*#__PURE__*/ jsx_runtime_.jsx("a", {
+                href: "https://www.facebook.com/XcaretPark/",
+                className: "mr-6 text-gray-600",
+                children: /*#__PURE__*/ jsx_runtime_.jsx("svg", {
+                    "aria-hidden": "true",
+                    focusable: "false",
+                    "data-prefix": "fab",
+                    "data-icon": "facebook-f",
+                    className: "w-2.5",
+                    role: "img",
+                    xmlns: "http://www.w3.org/2000/svg",
+                    viewBox: "0 0 320 512",
+                    children: /*#__PURE__*/ jsx_runtime_.jsx("path", {
+                        fill: "currentColor",
+                        d: "M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
+                    })
+                })
+            }),
+            /*#__PURE__*/ jsx_runtime_.jsx("a", {
+                href: "https://twitter.com/XcaretPark?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor",
+                className: "mr-6 text-gray-600",
+                children: /*#__PURE__*/ jsx_runtime_.jsx("svg", {
+                    "aria-hidden": "true",
+                    focusable: "false",
+                    "data-prefix": "fab",
+                    "data-icon": "twitter",
+                    className: "w-4",
+                    role: "img",
+                    xmlns: "http://www.w3.org/2000/svg",
+                    viewBox: "0 0 512 512",
+                    children: /*#__PURE__*/ jsx_runtime_.jsx("path", {
+                        fill: "currentColor",
+                        d: "M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
+                    })
+                })
+            }),
+            /*#__PURE__*/ jsx_runtime_.jsx("a", {
+                href: "#!",
+                className: "mr-6 text-gray-600",
+                children: /*#__PURE__*/ jsx_runtime_.jsx("svg", {
+                    "aria-hidden": "true",
+                    focusable: "false",
+                    "data-prefix": "fab",
+                    "data-icon": "instagram",
+                    className: "w-3.5",
+                    role: "img",
+                    xmlns: "http://www.w3.org/2000/svg",
+                    viewBox: "0 0 448 512",
+                    children: /*#__PURE__*/ jsx_runtime_.jsx("path", {
+                        fill: "currentColor",
+                        d: "M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+                    })
+                })
+            })
+        ]
+    });
+};
+
+// EXTERNAL MODULE: external "react"
+var external_react_ = __webpack_require__(689);
+;// CONCATENATED MODULE: ./hooks/useDeviceDetected.js
+
+
+const useDeviceDetected = ()=>{
+    const [movil, setmovil] = (0,external_react_.useState)(false);
+    const [browser, setBrowser] = (0,external_react_.useState)(false);
+    (0,external_react_.useEffect)(()=>{
+        external_react_device_detect_.isMobile ? setmovil(true) : setmovil(false);
+        external_react_device_detect_.isBrowser ? setBrowser(true) : setBrowser(false);
+    }, []);
+    return {
+        movil,
+        browser
+    };
+};
+
+;// CONCATENATED MODULE: ./components/PreFooter.jsx
+
+
+
+
+
+
+const PreFooter = ()=>{
+    const { movil , browser  } = useDeviceDetected();
+    const { prefooter  } = (0,external_react_redux_.useSelector)((state)=>state.app);
+    const { contactCenter , numbers  } = prefooter;
+    return /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+        className: "mx-auto flex-col bg-storm-gray-300 p-3",
+        children: [
+            movil ? /*#__PURE__*/ jsx_runtime_.jsx(SocialNetworks, {}) : /*#__PURE__*/ jsx_runtime_.jsx(jsx_runtime_.Fragment, {}),
+            /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                className: "flex flex-col items-stretch",
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                        className: "flex justify-around",
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime_.jsxs)("span", {
+                                className: "text-xs text-white",
+                                children: [
+                                    contactCenter.title,
+                                    " "
+                                ]
+                            }),
+                            browser ? /*#__PURE__*/ jsx_runtime_.jsx(SocialNetworks, {}) : /*#__PURE__*/ jsx_runtime_.jsx(jsx_runtime_.Fragment, {})
+                        ]
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                        className: "flex justify-around",
+                        children: [
+                            /*#__PURE__*/ jsx_runtime_.jsx("span", {
+                                className: "text-xs text-white",
+                                children: contactCenter.email
+                            }),
+                            /*#__PURE__*/ jsx_runtime_.jsx("span", {
+                                className: "text-xs text-white"
+                            })
+                        ]
+                    }),
+                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                        className: "flex justify-around",
+                        children: [
+                            numbers.map((item, index)=>{
+                                return index < 2 ? /*#__PURE__*/ jsx_runtime_.jsx(Numbers, {
+                                    name: item.name,
+                                    number: item.number
+                                }, index) : /*#__PURE__*/ jsx_runtime_.jsx(jsx_runtime_.Fragment, {});
+                            }),
+                            /*#__PURE__*/ jsx_runtime_.jsx("ul", {
+                                children: /*#__PURE__*/ jsx_runtime_.jsx("li", {
+                                    children: /*#__PURE__*/ jsx_runtime_.jsx("select", {
+                                        className: "text-xs bg-storm-gray-300 dark:text-white ",
+                                        children: numbers.map((item, i)=>{
+                                            return i > 1 ? /*#__PURE__*/ (0,jsx_runtime_.jsxs)("option", {
+                                                className: " hover:text-blue-500 cursor-pointer transition-colors duration-300",
+                                                value: item.name,
+                                                children: [
+                                                    item.name,
+                                                    " ",
+                                                    item.number,
+                                                    " "
+                                                ]
+                                            }, item.name) : /*#__PURE__*/ jsx_runtime_.jsx(jsx_runtime_.Fragment, {});
+                                        })
+                                    })
+                                })
+                            })
+                        ]
+                    })
+                ]
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./components/Header.jsx
+
+
+const Header = ()=>{
+    const { header  } = (0,external_react_redux_.useSelector)((state)=>state.app);
+    const { h1 , discount , paragraphs  } = header;
+    return /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+        className: "grid bg-gray-300 p-28 px-40",
+        children: [
+            /*#__PURE__*/ jsx_runtime_.jsx("h1", {
+                className: "pl-16 text-6xl",
+                children: h1
+            }),
+            /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                className: "flex m-10",
+                children: [
+                    /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                        className: "p-10",
+                        children: /*#__PURE__*/ jsx_runtime_.jsx("h1", {
+                            className: "text-6xl",
+                            children: discount
+                        })
+                    }),
+                    /*#__PURE__*/ jsx_runtime_.jsx("p", {
+                        className: "text-2xl text-center pt-12",
+                        children: paragraphs
+                    })
+                ]
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./components/movil/HeaderMovil.jsx
+
+
+const HeaderMovil = (props)=>{
+    const { header  } = (0,external_react_redux_.useSelector)((state)=>state.app);
+    const { h1 , discount , paragraphs  } = header;
+    return /*#__PURE__*/ jsx_runtime_.jsx(jsx_runtime_.Fragment, {
+        children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+            className: "grid bg-gray-300 p-4 py-11",
+            children: [
+                /*#__PURE__*/ jsx_runtime_.jsx("h1", {
+                    className: "text-center text-4xl m-5",
+                    children: h1
+                }),
+                /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                    className: "p-6",
+                    children: /*#__PURE__*/ jsx_runtime_.jsx("h1", {
+                        className: "text-center text-5xl",
+                        children: discount
+                    })
+                }),
+                /*#__PURE__*/ jsx_runtime_.jsx("p", {
+                    className: "text-lg text-center m-2",
+                    children: paragraphs
+                })
+            ]
+        })
+    });
+};
+HeaderMovil.getInitialProps = async (ctx)=>{
+    return {};
+};
+
+;// CONCATENATED MODULE: ./components/Legals.jsx
+
+
+
+
+const Legals = ()=>{
+    const { movil  } = useDeviceDetected();
+    const { legals  } = (0,external_react_redux_.useSelector)((state)=>state.app);
+    return /*#__PURE__*/ jsx_runtime_.jsx("div", {
+        className: "bg-gray-100 p-5",
+        children: movil ? /*#__PURE__*/ (0,jsx_runtime_.jsxs)("span", {
+            className: "flex p-5 text-sm",
+            children: [
+                " ",
+                legals,
+                " "
+            ]
+        }) : /*#__PURE__*/ jsx_runtime_.jsx("span", {
+            className: "flex p-8 px-20 w-6/12 m-4",
+            children: legals
+        })
+    });
+};
+
+;// CONCATENATED MODULE: external "sweetalert2"
+const external_sweetalert2_namespaceObject = require("sweetalert2");
+var external_sweetalert2_default = /*#__PURE__*/__webpack_require__.n(external_sweetalert2_namespaceObject);
+;// CONCATENATED MODULE: ./components/Promotions.jsx
+
+
+
+
+const Promotions = ()=>{
+    const { promotions  } = (0,external_react_redux_.useSelector)((state)=>state.app);
+    const { title , logoPromo , Subtitle , paragraphs , button , imagePromo  } = promotions[0];
+    const onSubmit = ()=>{
+        const numPedido = Math.floor(Math.random() * 1000);
+        external_sweetalert2_default().fire({
+            title: "Codigo de compra " + numPedido,
+            text: "Resumen: " + title,
+            icon: "info",
+            confirmButtonColor: "#3085d6"
+        }).then((result)=>{
+            if (result.isConfirmed) {
+                external_sweetalert2_default().fire("Gracias por tu compra!", "", "success");
+            }
+        });
+    };
+    //console.log({title, logoPromo, Subtitle, paragraphs, button, imagePromo } )
+    return /*#__PURE__*/ jsx_runtime_.jsx("div", {
+        className: "m-3 sm:m-32",
+        children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+            className: "flex flex-col items-center shadow-xl xl:flex-row rounded-3xl",
+            children: [
+                /*#__PURE__*/ jsx_runtime_.jsx("img", {
+                    className: "cursor-pointer rounded-3xl ",
+                    src: imagePromo,
+                    alt: ""
+                }),
+                /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                    className: "flex flex-col justify-between p-4 leading-normal",
+                    children: [
+                        /*#__PURE__*/ jsx_runtime_.jsx("img", {
+                            className: "m-2 py-5 w-48 ",
+                            src: logoPromo
+                        }),
+                        /*#__PURE__*/ (0,jsx_runtime_.jsxs)("h5", {
+                            className: "m-2 xl:text-6xl text-3xl text-center ",
+                            children: [
+                                title,
+                                " "
+                            ]
+                        }),
+                        /*#__PURE__*/ (0,jsx_runtime_.jsxs)("p", {
+                            className: "m-2 xl:text-3xl text-xl font-normal text-gray-900",
+                            children: [
+                                Subtitle,
+                                " "
+                            ]
+                        }),
+                        /*#__PURE__*/ (0,jsx_runtime_.jsxs)("p", {
+                            className: "m-2 xl:text-3xl text-xl font-normal text-gray-900",
+                            children: [
+                                paragraphs,
+                                " "
+                            ]
+                        }),
+                        /*#__PURE__*/ jsx_runtime_.jsx("button", {
+                            className: "py-2.5 px-5 mr-2 m-2 text-xl bg-white rounded-lg border border-black hover:bg-gray-200 ",
+                            onClick: onSubmit,
+                            children: button.text
+                        })
+                    ]
+                })
+            ]
+        })
+    });
+};
+
+;// CONCATENATED MODULE: ./components/CarouselItem.jsx
+
+const CarouselItem = ({ resource , index  })=>{
+    return /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+        className: "carousel-item text-center relative w-64 h-64 snap-start",
+        children: [
+            /*#__PURE__*/ jsx_runtime_.jsx("a", {
+                className: "h-full w-full aspect-square block bg-origin-padding bg-left-top bg-cover bg-no-repeat z-0",
+                style: {
+                    backgroundImage: `url(${resource.src || ""})`
+                },
+                children: /*#__PURE__*/ jsx_runtime_.jsx("img", {
+                    src: resource.src || "",
+                    alt: resource.alt,
+                    className: "w-full aspect-square hidden"
+                })
+            }),
+            /*#__PURE__*/ jsx_runtime_.jsx("a", {
+                className: "h-full w-full aspect-square block absolute top-0 left-0 transition-opacity duration-300 opacity-0 hover:opacity-100 bg-blue-800/75 z-10"
+            })
+        ]
+    }, index);
+};
+
+;// CONCATENATED MODULE: ./components/CarouselComponent.jsx
+
+
+
+
+
+const CarouselComponent = ()=>{
+    const { movil , browser  } = useDeviceDetected();
+    const { carousel: carouselData  } = (0,external_react_redux_.useSelector)((state)=>state.app);
+    const { text , desktop , mobile  } = carouselData;
+    const maxScrollWidth = (0,external_react_.useRef)(0);
+    const [currentIndex, setCurrentIndex] = (0,external_react_.useState)(0);
+    const carousel = (0,external_react_.useRef)(null);
+    const movePrev = ()=>{
+        if (currentIndex > 0) {
+            setCurrentIndex((prevState)=>prevState - 1);
+        }
+    };
+    const moveNext = ()=>{
+        if (carousel.current !== null && carousel.current.offsetWidth * currentIndex <= maxScrollWidth.current) {
+            setCurrentIndex((prevState)=>prevState + 1);
+        }
+    };
+    const isDisabled = (direction)=>{
+        if (direction === "prev") {
+            return currentIndex <= 0;
+        }
+        if (direction === "next" && carousel.current !== null) {
+            return carousel.current.offsetWidth * currentIndex >= maxScrollWidth.current;
+        }
+        return false;
+    };
+    (0,external_react_.useEffect)(()=>{
+        if (carousel !== null && carousel.current !== null) {
+            carousel.current.scrollLeft = carousel.current.offsetWidth * currentIndex;
+        }
+    }, [
+        currentIndex
+    ]);
+    (0,external_react_.useEffect)(()=>{
+        maxScrollWidth.current = carousel.current ? carousel.current.scrollWidth - carousel.current.offsetWidth : 0;
+    }, []);
+    return /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+        className: "carousel my-12 mx-auto",
+        children: [
+            /*#__PURE__*/ jsx_runtime_.jsx("h2", {
+                className: "text-4xl leading-8 font-semibold mb-12 text-slate-700",
+                children: text
+            }),
+            /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                className: "relative overflow-hidden",
+                children: [
+                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                        className: "flex justify-between absolute top left w-full h-full",
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime_.jsxs)("button", {
+                                onClick: movePrev,
+                                className: "hover:bg-blue-900/75 text-white w-10 h-full text-center opacity-75 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed z-10 p-0 m-0 transition-all ease-in-out duration-300",
+                                disabled: isDisabled("prev"),
+                                children: [
+                                    /*#__PURE__*/ jsx_runtime_.jsx("svg", {
+                                        xmlns: "http://www.w3.org/2000/svg",
+                                        className: "h-12 w-20 -ml-5",
+                                        fill: "none",
+                                        viewBox: "0 0 24 24",
+                                        stroke: "currentColor",
+                                        strokeWidth: 2,
+                                        children: /*#__PURE__*/ jsx_runtime_.jsx("path", {
+                                            strokeLinecap: "round",
+                                            strokeLinejoin: "round",
+                                            d: "M15 19l-7-7 7-7"
+                                        })
+                                    }),
+                                    /*#__PURE__*/ jsx_runtime_.jsx("span", {
+                                        className: "sr-only",
+                                        children: "Prev"
+                                    })
+                                ]
+                            }),
+                            /*#__PURE__*/ (0,jsx_runtime_.jsxs)("button", {
+                                onClick: moveNext,
+                                className: "hover:bg-blue-900/75 text-white w-10 h-full text-center opacity-75 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed z-10 p-0 m-0 transition-all ease-in-out duration-300",
+                                disabled: isDisabled("next"),
+                                children: [
+                                    /*#__PURE__*/ jsx_runtime_.jsx("svg", {
+                                        xmlns: "http://www.w3.org/2000/svg",
+                                        className: "h-12 w-20 -ml-5",
+                                        fill: "none",
+                                        viewBox: "0 0 24 24",
+                                        stroke: "currentColor",
+                                        strokeWidth: 2,
+                                        children: /*#__PURE__*/ jsx_runtime_.jsx("path", {
+                                            strokeLinecap: "round",
+                                            strokeLinejoin: "round",
+                                            d: "M9 5l7 7-7 7"
+                                        })
+                                    }),
+                                    /*#__PURE__*/ jsx_runtime_.jsx("span", {
+                                        className: "sr-only",
+                                        children: "Next"
+                                    })
+                                ]
+                            })
+                        ]
+                    }),
+                    /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                        ref: carousel,
+                        className: "carousel-container relative flex gap-1 overflow-hidden scroll-smooth snap-x snap-mandatory touch-pan-x z-0",
+                        children: browser ? desktop.map((resource, index)=>{
+                            return /*#__PURE__*/ jsx_runtime_.jsx(CarouselItem, {
+                                resource: resource,
+                                index: index
+                            }, index);
+                        }) : mobile.map((resource, index)=>{
+                            return /*#__PURE__*/ jsx_runtime_.jsx(CarouselItem, {
+                                resource: resource,
+                                index: index
+                            }, index);
+                        })
+                    })
+                ]
+            })
+        ]
+    });
+};
+
+;// CONCATENATED MODULE: ./pages/index.js
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const Home = (props)=>{
+    const { movil  } = useDeviceDetected();
+    const { locale  } = useLanguage();
+    const dispatch = (0,external_react_redux_.useDispatch)();
+    switch(locale){
+        case "en":
+            dispatch((0,appSlice/* onLoadData */.Eo)(props.data.en));
+            break;
+        case "es":
+            dispatch((0,appSlice/* onLoadData */.Eo)(props.data.es));
+            break;
+        default:
+            dispatch((0,appSlice/* onLoadData */.Eo)(props.data.es));
+            break;
+    }
+    if (movil) {
+        dispatch((0,appSlice/* onDeviceDetected */.AJ)("isMobile"));
+    } else {
+        dispatch((0,appSlice/* onDeviceDetected */.AJ)("isBrowser"));
+    }
+    return /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+        children: [
+            /*#__PURE__*/ (0,jsx_runtime_.jsxs)((head_default()), {
+                children: [
+                    /*#__PURE__*/ jsx_runtime_.jsx("title", {
+                        children: "Xcaret"
+                    }),
+                    /*#__PURE__*/ jsx_runtime_.jsx("meta", {
+                        name: "description",
+                        content: "Generated by create next app"
+                    }),
+                    /*#__PURE__*/ jsx_runtime_.jsx("link", {
+                        rel: "icon",
+                        href: "/favicon.ico"
+                    })
+                ]
+            }),
+            /*#__PURE__*/ jsx_runtime_.jsx(NavBar, {}),
+            movil ? /*#__PURE__*/ jsx_runtime_.jsx(HeaderMovil, {}) : /*#__PURE__*/ jsx_runtime_.jsx(Header, {}),
+            /*#__PURE__*/ jsx_runtime_.jsx(Promotions, {}),
+            /*#__PURE__*/ jsx_runtime_.jsx(CarouselComponent, {}),
+            /*#__PURE__*/ jsx_runtime_.jsx(Legals, {}),
+            /*#__PURE__*/ jsx_runtime_.jsx(PreFooter, {}),
+            /*#__PURE__*/ jsx_runtime_.jsx(Footer, {})
+        ]
+    });
+};
+Home.getInitialProps = async (ctx)=>{
+    const res = await external_isomorphic_fetch_default()("https://raw.githubusercontent.com/javialcocer/test-json/main/data.json");
+    const resJSON = await res.json();
+    return {
+        data: resJSON
+    };
+};
+/* harmony default export */ const pages = (Home);
+
 
 /***/ }),
 
-/***/ "./components/CarouselItem.jsx":
-/*!*************************************!*\
-  !*** ./components/CarouselItem.jsx ***!
-  \*************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"CarouselItem\": () => (/* binding */ CarouselItem)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n\nconst CarouselItem = ({ resource , index  })=>{\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n        className: \"carousel-item text-center relative w-64 h-64 snap-start\",\n        children: [\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"a\", {\n                className: \"h-full w-full aspect-square block bg-origin-padding bg-left-top bg-cover bg-no-repeat z-0\",\n                style: {\n                    backgroundImage: `url(${resource.src || \"\"})`\n                },\n                children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"img\", {\n                    src: resource.src || \"\",\n                    alt: resource.alt,\n                    className: \"w-full aspect-square hidden\"\n                }, void 0, false, {\n                    fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\CarouselItem.jsx\",\n                    lineNumber: 15,\n                    columnNumber: 25\n                }, undefined)\n            }, void 0, false, {\n                fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\CarouselItem.jsx\",\n                lineNumber: 10,\n                columnNumber: 21\n            }, undefined),\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"a\", {\n                className: \"h-full w-full aspect-square block absolute top-0 left-0 transition-opacity duration-300 opacity-0 hover:opacity-100 bg-blue-800/75 z-10\"\n            }, void 0, false, {\n                fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\CarouselItem.jsx\",\n                lineNumber: 21,\n                columnNumber: 21\n            }, undefined)\n        ]\n    }, index, true, {\n        fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\CarouselItem.jsx\",\n        lineNumber: 6,\n        columnNumber: 17\n    }, undefined);\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9jb21wb25lbnRzL0Nhcm91c2VsSXRlbS5qc3guanMiLCJtYXBwaW5ncyI6Ijs7Ozs7O0FBRUE7QUFBTyxNQUFNQSxlQUFlLENBQUMsRUFBRUMsU0FBUSxFQUFFQyxNQUFLLEVBQUMsR0FBSztJQUV4QyxxQkFDSSw4REFBQ0M7UUFFR0MsV0FBVTs7MEJBRVYsOERBQUNDO2dCQUVHRCxXQUFVO2dCQUNWRSxPQUFPO29CQUFFQyxpQkFBaUIsQ0FBQyxJQUFJLEVBQUVOLFNBQVNPLEdBQUcsSUFBSSxHQUFHLENBQUMsQ0FBQztnQkFBQzswQkFFdkQsNEVBQUNDO29CQUNHRCxLQUFLUCxTQUFTTyxHQUFHLElBQUk7b0JBQ3JCRSxLQUFLVCxTQUFTUyxHQUFHO29CQUNqQk4sV0FBVTs7Ozs7Ozs7Ozs7MEJBR2xCLDhEQUFDQztnQkFFR0QsV0FBVTs7Ozs7OztPQWhCVEY7Ozs7O0FBd0J6QixFQUFDIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8veGNhcmV0Ly4vY29tcG9uZW50cy9DYXJvdXNlbEl0ZW0uanN4P2FhMWIiXSwic291cmNlc0NvbnRlbnQiOlsiXHJcblxyXG5leHBvcnQgY29uc3QgQ2Fyb3VzZWxJdGVtID0gKHsgcmVzb3VyY2UsIGluZGV4fSkgPT4ge1xyXG4gXHJcbiAgICAgICAgICAgIHJldHVybiAoXHJcbiAgICAgICAgICAgICAgICA8ZGl2XHJcbiAgICAgICAgICAgICAgICAgICAga2V5PXtpbmRleH1cclxuICAgICAgICAgICAgICAgICAgICBjbGFzc05hbWU9XCJjYXJvdXNlbC1pdGVtIHRleHQtY2VudGVyIHJlbGF0aXZlIHctNjQgaC02NCBzbmFwLXN0YXJ0XCJcclxuICAgICAgICAgICAgICAgID5cclxuICAgICAgICAgICAgICAgICAgICA8YVxyXG5cclxuICAgICAgICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPVwiaC1mdWxsIHctZnVsbCBhc3BlY3Qtc3F1YXJlIGJsb2NrIGJnLW9yaWdpbi1wYWRkaW5nIGJnLWxlZnQtdG9wIGJnLWNvdmVyIGJnLW5vLXJlcGVhdCB6LTBcIlxyXG4gICAgICAgICAgICAgICAgICAgICAgICBzdHlsZT17eyBiYWNrZ3JvdW5kSW1hZ2U6IGB1cmwoJHtyZXNvdXJjZS5zcmMgfHwgJyd9KWAgfX1cclxuICAgICAgICAgICAgICAgICAgICA+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDxpbWdcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIHNyYz17cmVzb3VyY2Uuc3JjIHx8ICcnfVxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgYWx0PXtyZXNvdXJjZS5hbHR9XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICBjbGFzc05hbWU9XCJ3LWZ1bGwgYXNwZWN0LXNxdWFyZSBoaWRkZW5cIlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAvPlxyXG4gICAgICAgICAgICAgICAgICAgIDwvYT5cclxuICAgICAgICAgICAgICAgICAgICA8YVxyXG5cclxuICAgICAgICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPVwiaC1mdWxsIHctZnVsbCBhc3BlY3Qtc3F1YXJlIGJsb2NrIGFic29sdXRlIHRvcC0wIGxlZnQtMCB0cmFuc2l0aW9uLW9wYWNpdHkgZHVyYXRpb24tMzAwIG9wYWNpdHktMCBob3ZlcjpvcGFjaXR5LTEwMCBiZy1ibHVlLTgwMC83NSB6LTEwXCJcclxuICAgICAgICAgICAgICAgICAgICA+XHJcbiAgICAgICAgICAgICAgICAgICAgICBcclxuICAgICAgICAgICAgICAgICAgICA8L2E+XHJcbiAgICAgICAgICAgICAgICA8L2Rpdj5cclxuICAgICAgICAgICAgKVxyXG4gICAgICAgXHJcbiAgICAgICAgXHJcbn1cclxuIl0sIm5hbWVzIjpbIkNhcm91c2VsSXRlbSIsInJlc291cmNlIiwiaW5kZXgiLCJkaXYiLCJjbGFzc05hbWUiLCJhIiwic3R5bGUiLCJiYWNrZ3JvdW5kSW1hZ2UiLCJzcmMiLCJpbWciLCJhbHQiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./components/CarouselItem.jsx\n");
-
-/***/ }),
-
-/***/ "./components/Footer.jsx":
-/*!*******************************!*\
-  !*** ./components/Footer.jsx ***!
-  \*******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"Footer\": () => (/* binding */ Footer)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ \"react-redux\");\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_1__);\n\n\nconst Footer = ()=>{\n    const { footer  } = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useSelector)((state)=>state.app);\n    const { copy , links  } = footer;\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n        className: \"\",\n        children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"footer\", {\n            className: \"p-4 shadow md:flex md:items-center md:justify-around md:p-6 bg-black\",\n            children: [\n                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"span\", {\n                    className: \"text-sm text-white\",\n                    children: copy\n                }, void 0, false, {\n                    fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\Footer.jsx\",\n                    lineNumber: 11,\n                    columnNumber: 17\n                }, undefined),\n                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"ul\", {\n                    className: \"flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0\",\n                    children: links.map((item)=>{\n                        return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"li\", {\n                            children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"a\", {\n                                href: item.href,\n                                className: \"mr-4 hover:underline md:mr-6\",\n                                children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"span\", {\n                                    className: \"text-sm text-white\",\n                                    children: [\n                                        \" \",\n                                        item.tittle,\n                                        \" \"\n                                    ]\n                                }, void 0, true, {\n                                    fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\Footer.jsx\",\n                                    lineNumber: 18,\n                                    columnNumber: 41\n                                }, undefined)\n                            }, item.tittle, false, {\n                                fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\Footer.jsx\",\n                                lineNumber: 17,\n                                columnNumber: 37\n                            }, undefined)\n                        }, void 0, false, {\n                            fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\Footer.jsx\",\n                            lineNumber: 16,\n                            columnNumber: 33\n                        }, undefined);\n                    })\n                }, void 0, false, {\n                    fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\Footer.jsx\",\n                    lineNumber: 12,\n                    columnNumber: 17\n                }, undefined)\n            ]\n        }, void 0, true, {\n            fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\Footer.jsx\",\n            lineNumber: 10,\n            columnNumber: 13\n        }, undefined)\n    }, void 0, false, {\n        fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\Footer.jsx\",\n        lineNumber: 8,\n        columnNumber: 9\n    }, undefined);\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9jb21wb25lbnRzL0Zvb3Rlci5qc3guanMiLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7QUFBQTtBQUF5QztBQUdsQyxNQUFNQyxTQUFTLElBQU07SUFDeEIsTUFBTSxFQUFFQyxPQUFNLEVBQUUsR0FBR0Ysd0RBQVdBLENBQUNHLENBQUFBLFFBQVNBLE1BQU1DLEdBQUc7SUFDakQsTUFBTSxFQUFFQyxLQUFJLEVBQUVDLE1BQUssRUFBRSxHQUFHSjtJQUN4QixxQkFDSSw4REFBQ0s7UUFBSUMsV0FBVTtrQkFFWCw0RUFBQ047WUFBT00sV0FBVTs7OEJBQ2QsOERBQUNDO29CQUFLRCxXQUFVOzhCQUF1Qkg7Ozs7Ozs4QkFDdkMsOERBQUNLO29CQUFHRixXQUFVOzhCQUVORixNQUFNSyxHQUFHLENBQUNDLENBQUFBLE9BQVE7d0JBQ2QscUJBQ0ksOERBQUNDO3NDQUNHLDRFQUFDQztnQ0FBRUMsTUFBTUgsS0FBS0csSUFBSTtnQ0FBRVAsV0FBVTswQ0FDMUIsNEVBQUNDO29DQUFLRCxXQUFVOzt3Q0FBc0I7d0NBQUVJLEtBQUtJLE1BQU07d0NBQUM7Ozs7Ozs7K0JBRFVKLEtBQUtJLE1BQU07Ozs7Ozs7Ozs7b0JBS3pGOzs7Ozs7Ozs7Ozs7Ozs7OztBQU14QixFQUFDIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8veGNhcmV0Ly4vY29tcG9uZW50cy9Gb290ZXIuanN4PzM4OTUiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgdXNlU2VsZWN0b3IgfSBmcm9tIFwicmVhY3QtcmVkdXhcIlxyXG5cclxuXHJcbmV4cG9ydCBjb25zdCBGb290ZXIgPSAoKSA9PiB7XHJcbiAgICBjb25zdCB7IGZvb3RlciB9ID0gdXNlU2VsZWN0b3Ioc3RhdGUgPT4gc3RhdGUuYXBwKTtcclxuICAgIGNvbnN0IHsgY29weSwgbGlua3MgfSA9IGZvb3RlcjtcclxuICAgIHJldHVybiAoXHJcbiAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJcIj5cclxuXHJcbiAgICAgICAgICAgIDxmb290ZXIgY2xhc3NOYW1lPVwicC00IHNoYWRvdyBtZDpmbGV4IG1kOml0ZW1zLWNlbnRlciBtZDpqdXN0aWZ5LWFyb3VuZCBtZDpwLTYgYmctYmxhY2tcIiA+XHJcbiAgICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJ0ZXh0LXNtIHRleHQtd2hpdGVcIiA+e2NvcHl9PC9zcGFuPlxyXG4gICAgICAgICAgICAgICAgPHVsIGNsYXNzTmFtZT1cImZsZXggZmxleC13cmFwIGl0ZW1zLWNlbnRlciBtdC0zIHRleHQtc20gdGV4dC1ncmF5LTUwMCBkYXJrOnRleHQtZ3JheS00MDAgc206bXQtMFwiPlxyXG4gICAgICAgICAgICAgICAgICAgIHtcclxuICAgICAgICAgICAgICAgICAgICAgICAgbGlua3MubWFwKGl0ZW0gPT4ge1xyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgcmV0dXJuIChcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8bGk+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxhIGhyZWY9e2l0ZW0uaHJlZn0gY2xhc3NOYW1lPVwibXItNCBob3Zlcjp1bmRlcmxpbmUgbWQ6bXItNlwiIGtleT17aXRlbS50aXR0bGV9ID5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT1cInRleHQtc20gdGV4dC13aGl0ZVwiID4ge2l0ZW0udGl0dGxlfSA8L3NwYW4+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvYT5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L2xpPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgKVxyXG4gICAgICAgICAgICAgICAgICAgICAgICB9KVxyXG4gICAgICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgICAgIDwvdWw+XHJcbiAgICAgICAgICAgIDwvZm9vdGVyPlxyXG4gICAgICAgIDwvZGl2PlxyXG4gICAgKVxyXG59XHJcbiJdLCJuYW1lcyI6WyJ1c2VTZWxlY3RvciIsIkZvb3RlciIsImZvb3RlciIsInN0YXRlIiwiYXBwIiwiY29weSIsImxpbmtzIiwiZGl2IiwiY2xhc3NOYW1lIiwic3BhbiIsInVsIiwibWFwIiwiaXRlbSIsImxpIiwiYSIsImhyZWYiLCJ0aXR0bGUiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./components/Footer.jsx\n");
-
-/***/ }),
-
-/***/ "./components/Header.jsx":
-/*!*******************************!*\
-  !*** ./components/Header.jsx ***!
-  \*******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"Header\": () => (/* binding */ Header)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ \"react-redux\");\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_1__);\n\n\nconst Header = ()=>{\n    const { header  } = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useSelector)((state)=>state.app);\n    const { h1 , discount , paragraphs  } = header;\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n        className: \"grid bg-gray-300 p-28 px-40\",\n        children: [\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"h1\", {\n                className: \"pl-16 text-6xl\",\n                children: h1\n            }, void 0, false, {\n                fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\Header.jsx\",\n                lineNumber: 11,\n                columnNumber: 13\n            }, undefined),\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                className: \"flex m-10\",\n                children: [\n                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                        className: \"p-10\",\n                        children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"h1\", {\n                            className: \"text-6xl\",\n                            children: discount\n                        }, void 0, false, {\n                            fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\Header.jsx\",\n                            lineNumber: 19,\n                            columnNumber: 21\n                        }, undefined)\n                    }, void 0, false, {\n                        fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\Header.jsx\",\n                        lineNumber: 17,\n                        columnNumber: 17\n                    }, undefined),\n                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"p\", {\n                        className: \"text-2xl text-center pt-12\",\n                        children: paragraphs\n                    }, void 0, false, {\n                        fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\Header.jsx\",\n                        lineNumber: 23,\n                        columnNumber: 17\n                    }, undefined)\n                ]\n            }, void 0, true, {\n                fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\Header.jsx\",\n                lineNumber: 15,\n                columnNumber: 13\n            }, undefined)\n        ]\n    }, void 0, true, {\n        fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\Header.jsx\",\n        lineNumber: 9,\n        columnNumber: 9\n    }, undefined);\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9jb21wb25lbnRzL0hlYWRlci5qc3guanMiLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7QUFBQTtBQUF5QztBQUdsQyxNQUFNQyxTQUFTLElBQU07SUFDeEIsTUFBTSxFQUFFQyxPQUFNLEVBQUUsR0FBR0Ysd0RBQVdBLENBQUNHLENBQUFBLFFBQVNBLE1BQU1DLEdBQUc7SUFDakQsTUFBTSxFQUFFQyxHQUFFLEVBQUVDLFNBQVEsRUFBRUMsV0FBVSxFQUFFLEdBQUdMO0lBRXJDLHFCQUNJLDhEQUFDTTtRQUFJQyxXQUFVOzswQkFFWCw4REFBQ0o7Z0JBQUdJLFdBQVU7MEJBQ1RKOzs7Ozs7MEJBR0wsOERBQUNHO2dCQUFJQyxXQUFVOztrQ0FFWCw4REFBQ0Q7d0JBQUlDLFdBQVU7a0NBRVgsNEVBQUNKOzRCQUFHSSxXQUFVO3NDQUNUSDs7Ozs7Ozs7Ozs7a0NBR1QsOERBQUNJO3dCQUFFRCxXQUFVO2tDQUNSRjs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBTXJCLEVBQUMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly94Y2FyZXQvLi9jb21wb25lbnRzL0hlYWRlci5qc3g/NTY3ZCJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyB1c2VTZWxlY3RvciB9IGZyb20gXCJyZWFjdC1yZWR1eFwiXHJcblxyXG5cclxuZXhwb3J0IGNvbnN0IEhlYWRlciA9ICgpID0+IHtcclxuICAgIGNvbnN0IHsgaGVhZGVyIH0gPSB1c2VTZWxlY3RvcihzdGF0ZSA9PiBzdGF0ZS5hcHApO1xyXG4gICAgY29uc3QgeyBoMSwgZGlzY291bnQsIHBhcmFncmFwaHMgfSA9IGhlYWRlcjtcclxuXHJcbiAgICByZXR1cm4gKFxyXG4gICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZ3JpZCBiZy1ncmF5LTMwMCBwLTI4IHB4LTQwXCI+XHJcblxyXG4gICAgICAgICAgICA8aDEgY2xhc3NOYW1lPVwicGwtMTYgdGV4dC02eGxcIj5cclxuICAgICAgICAgICAgICAgIHtoMX1cclxuICAgICAgICAgICAgPC9oMT5cclxuXHJcbiAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZmxleCBtLTEwXCI+XHJcblxyXG4gICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJwLTEwXCI+XHJcblxyXG4gICAgICAgICAgICAgICAgICAgIDxoMSBjbGFzc05hbWU9XCJ0ZXh0LTZ4bFwiPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICB7ZGlzY291bnR9XHJcbiAgICAgICAgICAgICAgICAgICAgPC9oMT5cclxuICAgICAgICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgICAgICAgICAgPHAgY2xhc3NOYW1lPVwidGV4dC0yeGwgdGV4dC1jZW50ZXIgcHQtMTJcIj5cclxuICAgICAgICAgICAgICAgICAgICB7cGFyYWdyYXBoc31cclxuICAgICAgICAgICAgICAgIDwvcD5cclxuICAgICAgICAgICAgICAgXHJcbiAgICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgIDwvZGl2PlxyXG4gICAgKVxyXG59XHJcbiJdLCJuYW1lcyI6WyJ1c2VTZWxlY3RvciIsIkhlYWRlciIsImhlYWRlciIsInN0YXRlIiwiYXBwIiwiaDEiLCJkaXNjb3VudCIsInBhcmFncmFwaHMiLCJkaXYiLCJjbGFzc05hbWUiLCJwIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./components/Header.jsx\n");
-
-/***/ }),
-
-/***/ "./components/Legals.jsx":
-/*!*******************************!*\
-  !*** ./components/Legals.jsx ***!
-  \*******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"Legals\": () => (/* binding */ Legals)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ \"react-redux\");\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _hooks_useDeviceDetected__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../hooks/useDeviceDetected */ \"./hooks/useDeviceDetected.js\");\n\n\n\n\nconst Legals = ()=>{\n    const { movil  } = (0,_hooks_useDeviceDetected__WEBPACK_IMPORTED_MODULE_3__.useDeviceDetected)();\n    const { legals  } = (0,react_redux__WEBPACK_IMPORTED_MODULE_2__.useSelector)((state)=>state.app);\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n        className: \"bg-gray-100 p-5\",\n        children: movil ? /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"span\", {\n            className: \"flex p-5 text-sm\",\n            children: [\n                \" \",\n                legals,\n                \" \"\n            ]\n        }, void 0, true, {\n            fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\Legals.jsx\",\n            lineNumber: 12,\n            columnNumber: 23\n        }, undefined) : /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"span\", {\n            className: \"flex p-8 px-20 w-6/12 m-4\",\n            children: legals\n        }, void 0, false, {\n            fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\Legals.jsx\",\n            lineNumber: 13,\n            columnNumber: 23\n        }, undefined)\n    }, void 0, false, {\n        fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\Legals.jsx\",\n        lineNumber: 9,\n        columnNumber: 9\n    }, undefined);\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9jb21wb25lbnRzL0xlZ2Fscy5qc3guanMiLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7QUFBQTtBQUF5QjtBQUNnQjtBQUNzQjtBQUV4RCxNQUFNRyxTQUFTLElBQU07SUFDeEIsTUFBTSxFQUFFQyxNQUFLLEVBQUUsR0FBR0YsMkVBQWlCQTtJQUNuQyxNQUFNLEVBQUVHLE9BQU0sRUFBRSxHQUFHSix3REFBV0EsQ0FBQ0ssQ0FBQUEsUUFBU0EsTUFBTUMsR0FBRztJQUNqRCxxQkFDSSw4REFBQ0M7UUFBSUMsV0FBVTtrQkFFUCxzQkFDTSw4REFBQ0M7WUFBS0QsV0FBVTs7Z0JBQW1CO2dCQUFFSjtnQkFBTzs7Ozs7O3NDQUM1Qyw4REFBQ0s7WUFBS0QsV0FBVTtzQkFBNkJKOzs7OztxQkFBYzs7Ozs7O0FBSWpGLEVBQUMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly94Y2FyZXQvLi9jb21wb25lbnRzL0xlZ2Fscy5qc3g/OGNmMyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnXHJcbmltcG9ydCB7IHVzZVNlbGVjdG9yIH0gZnJvbSAncmVhY3QtcmVkdXgnXHJcbmltcG9ydCB7IHVzZURldmljZURldGVjdGVkIH0gZnJvbSAnLi4vaG9va3MvdXNlRGV2aWNlRGV0ZWN0ZWQnO1xyXG5cclxuZXhwb3J0IGNvbnN0IExlZ2FscyA9ICgpID0+IHtcclxuICAgIGNvbnN0IHsgbW92aWwgfSA9IHVzZURldmljZURldGVjdGVkKCk7XHJcbiAgICBjb25zdCB7IGxlZ2FscyB9ID0gdXNlU2VsZWN0b3Ioc3RhdGUgPT4gc3RhdGUuYXBwKVxyXG4gICAgcmV0dXJuIChcclxuICAgICAgICA8ZGl2IGNsYXNzTmFtZT0nYmctZ3JheS0xMDAgcC01Jz5cclxuICAgICAgICAgICAge1xyXG4gICAgICAgICAgICAgICAgKG1vdmlsKVxyXG4gICAgICAgICAgICAgICAgICAgID8gPHNwYW4gY2xhc3NOYW1lPSdmbGV4IHAtNSB0ZXh0LXNtJz4ge2xlZ2Fsc30gPC9zcGFuPlxyXG4gICAgICAgICAgICAgICAgICAgIDogPHNwYW4gY2xhc3NOYW1lPSdmbGV4IHAtOCBweC0yMCB3LTYvMTIgbS00Jz57bGVnYWxzfTwvc3Bhbj5cclxuICAgICAgICAgICAgfVxyXG4gICAgICAgIDwvZGl2PlxyXG4gICAgKVxyXG59XHJcbiJdLCJuYW1lcyI6WyJSZWFjdCIsInVzZVNlbGVjdG9yIiwidXNlRGV2aWNlRGV0ZWN0ZWQiLCJMZWdhbHMiLCJtb3ZpbCIsImxlZ2FscyIsInN0YXRlIiwiYXBwIiwiZGl2IiwiY2xhc3NOYW1lIiwic3BhbiJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./components/Legals.jsx\n");
-
-/***/ }),
-
-/***/ "./components/NavBar.jsx":
-/*!*******************************!*\
-  !*** ./components/NavBar.jsx ***!
-  \*******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"NavBar\": () => (/* binding */ NavBar)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ \"react-redux\");\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_1__);\n\n\nconst NavBar = ()=>{\n    const { navbar  } = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useSelector)((state)=>state.app);\n    const { logo , menu  } = navbar;\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n        className: \"shadow bg-gray-200\",\n        children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n            className: \"mx-auto p-5 flex items-center justify-between\",\n            children: [\n                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                    className: \"cursor-pointer\",\n                    children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"img\", {\n                        className: \"h-3 sm:h-7\",\n                        src: logo\n                    }, void 0, false, {\n                        fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\NavBar.jsx\",\n                        lineNumber: 13,\n                        columnNumber: 21\n                    }, undefined)\n                }, void 0, false, {\n                    fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\NavBar.jsx\",\n                    lineNumber: 12,\n                    columnNumber: 17\n                }, undefined),\n                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"ul\", {\n                    className: \"flex items-center gap-5\",\n                    children: [\n                        /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"li\", {\n                            children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"a\", {\n                                className: \"sm:text-2xl text-gray-600 hover:text-blue-500 cursor-pointer transition-colors duration-300\",\n                                children: menu.contact\n                            }, void 0, false, {\n                                fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\NavBar.jsx\",\n                                lineNumber: 17,\n                                columnNumber: 25\n                            }, undefined)\n                        }, void 0, false, {\n                            fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\NavBar.jsx\",\n                            lineNumber: 16,\n                            columnNumber: 21\n                        }, undefined),\n                        /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"li\", {\n                            children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"a\", {\n                                className: \"sm:text-2xl text-gray-600 hover:text-blue-500 cursor-pointer transition-colors duration-300\",\n                                children: menu.lang.title\n                            }, void 0, false, {\n                                fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\NavBar.jsx\",\n                                lineNumber: 24,\n                                columnNumber: 25\n                            }, undefined)\n                        }, void 0, false, {\n                            fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\NavBar.jsx\",\n                            lineNumber: 23,\n                            columnNumber: 21\n                        }, undefined),\n                        /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"li\", {\n                            children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"select\", {\n                                className: \"text-xs bg-gray-200 text-black \",\n                                children: menu.currency.map((item)=>{\n                                    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"option\", {\n                                        className: \"hover:text-blue-500 cursor-pointer transition-colors duration-300\",\n                                        value: item,\n                                        children: item\n                                    }, item, false, {\n                                        fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\NavBar.jsx\",\n                                        lineNumber: 35,\n                                        columnNumber: 41\n                                    }, undefined);\n                                })\n                            }, void 0, false, {\n                                fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\NavBar.jsx\",\n                                lineNumber: 31,\n                                columnNumber: 25\n                            }, undefined)\n                        }, void 0, false, {\n                            fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\NavBar.jsx\",\n                            lineNumber: 30,\n                            columnNumber: 21\n                        }, undefined)\n                    ]\n                }, void 0, true, {\n                    fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\NavBar.jsx\",\n                    lineNumber: 15,\n                    columnNumber: 17\n                }, undefined)\n            ]\n        }, void 0, true, {\n            fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\NavBar.jsx\",\n            lineNumber: 10,\n            columnNumber: 13\n        }, undefined)\n    }, void 0, false, {\n        fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\NavBar.jsx\",\n        lineNumber: 9,\n        columnNumber: 9\n    }, undefined);\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9jb21wb25lbnRzL05hdkJhci5qc3guanMiLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7QUFBQTtBQUF5QztBQUdsQyxNQUFNQyxTQUFTLElBQU07SUFDeEIsTUFBTSxFQUFFQyxPQUFNLEVBQUUsR0FBR0Ysd0RBQVdBLENBQUNHLENBQUFBLFFBQVNBLE1BQU1DLEdBQUc7SUFDakQsTUFBTSxFQUFFQyxLQUFJLEVBQUVDLEtBQUksRUFBRSxHQUFHSjtJQUN2QixxQkFFSSw4REFBQ0s7UUFBSUMsV0FBVTtrQkFDWCw0RUFBQ0Q7WUFBSUMsV0FBVTs7OEJBRVgsOERBQUNEO29CQUFJQyxXQUFVOzhCQUNYLDRFQUFDQzt3QkFBSUQsV0FBVTt3QkFBYUUsS0FBS0w7Ozs7Ozs7Ozs7OzhCQUVyQyw4REFBQ007b0JBQUdILFdBQVU7O3NDQUNWLDhEQUFDSTtzQ0FDRyw0RUFBQ0M7Z0NBQUVMLFdBQVU7MENBR1JGLEtBQUtRLE9BQU87Ozs7Ozs7Ozs7O3NDQUdyQiw4REFBQ0Y7c0NBQ0csNEVBQUNDO2dDQUFFTCxXQUFVOzBDQUdSRixLQUFLUyxJQUFJLENBQUNDLEtBQUs7Ozs7Ozs7Ozs7O3NDQUd4Qiw4REFBQ0o7c0NBQ0csNEVBQUNLO2dDQUFPVCxXQUFVOzBDQUVWRixLQUFLWSxRQUFRLENBQUNDLEdBQUcsQ0FBQ0MsQ0FBQUEsT0FBUTtvQ0FDdEIscUJBQ0ksOERBQUNDO3dDQUFPYixXQUFVO3dDQUN3Q2MsT0FBT0Y7a0RBQU9BO3VDQUFwQkE7Ozs7O2dDQUU1RDs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQWNoQyxFQUFDIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8veGNhcmV0Ly4vY29tcG9uZW50cy9OYXZCYXIuanN4P2ZiMWQiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgdXNlU2VsZWN0b3IgfSBmcm9tIFwicmVhY3QtcmVkdXhcIlxyXG5cclxuXHJcbmV4cG9ydCBjb25zdCBOYXZCYXIgPSAoKSA9PiB7XHJcbiAgICBjb25zdCB7IG5hdmJhciB9ID0gdXNlU2VsZWN0b3Ioc3RhdGUgPT4gc3RhdGUuYXBwKTtcclxuICAgIGNvbnN0IHsgbG9nbywgbWVudSB9ID0gbmF2YmFyO1xyXG4gICAgcmV0dXJuIChcclxuXHJcbiAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJzaGFkb3cgYmctZ3JheS0yMDBcIj5cclxuICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJteC1hdXRvIHAtNSBmbGV4IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWJldHdlZW5cIj5cclxuXHJcbiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImN1cnNvci1wb2ludGVyXCIgPlxyXG4gICAgICAgICAgICAgICAgICAgIDxpbWcgY2xhc3NOYW1lPVwiaC0zIHNtOmgtN1wiIHNyYz17bG9nb30gLz5cclxuICAgICAgICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgICAgICAgICAgPHVsIGNsYXNzTmFtZT1cImZsZXggaXRlbXMtY2VudGVyIGdhcC01XCIgPlxyXG4gICAgICAgICAgICAgICAgICAgIDxsaT5cclxuICAgICAgICAgICAgICAgICAgICAgICAgPGEgY2xhc3NOYW1lPVwic206dGV4dC0yeGwgdGV4dC1ncmF5LTYwMCBob3Zlcjp0ZXh0LWJsdWUtNTAwXHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY3Vyc29yLXBvaW50ZXIgdHJhbnNpdGlvbi1jb2xvcnMgZHVyYXRpb24tMzAwXCJcclxuICAgICAgICAgICAgICAgICAgICAgICAgPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAge21lbnUuY29udGFjdH1cclxuICAgICAgICAgICAgICAgICAgICAgICAgPC9hPlxyXG4gICAgICAgICAgICAgICAgICAgIDwvbGk+XHJcbiAgICAgICAgICAgICAgICAgICAgPGxpPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICA8YSBjbGFzc05hbWU9XCJzbTp0ZXh0LTJ4bCB0ZXh0LWdyYXktNjAwIGhvdmVyOnRleHQtYmx1ZS01MDBcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY3Vyc29yLXBvaW50ZXIgdHJhbnNpdGlvbi1jb2xvcnMgZHVyYXRpb24tMzAwXCJcclxuICAgICAgICAgICAgICAgICAgICAgICAgPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAge21lbnUubGFuZy50aXRsZX1cclxuICAgICAgICAgICAgICAgICAgICAgICAgPC9hPlxyXG4gICAgICAgICAgICAgICAgICAgIDwvbGk+XHJcbiAgICAgICAgICAgICAgICAgICAgPGxpPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICA8c2VsZWN0IGNsYXNzTmFtZT1cInRleHQteHMgIGJnLWdyYXktMjAwICB0ZXh0LWJsYWNrICBcIj5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIHtcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBtZW51LmN1cnJlbmN5Lm1hcChpdGVtID0+IHtcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgcmV0dXJuIChcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxvcHRpb24gY2xhc3NOYW1lPVwiaG92ZXI6dGV4dC1ibHVlLTUwMFxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY3Vyc29yLXBvaW50ZXIgdHJhbnNpdGlvbi1jb2xvcnMgZHVyYXRpb24tMzAwXCIga2V5PXtpdGVtfSB2YWx1ZT17aXRlbX0+e2l0ZW19PC9vcHRpb24+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIClcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9KVxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICAgICAgICAgICAgICA8L3NlbGVjdD5cclxuICAgICAgICAgICAgICAgICAgICA8L2xpPlxyXG4gICAgICAgICAgICAgICAgPC91bD5cclxuXHJcbiAgICAgICAgICAgIDwvZGl2PlxyXG5cclxuXHJcblxyXG5cclxuICAgICAgICA8L2Rpdj5cclxuXHJcbiAgICApXHJcbn1cclxuXHJcblxyXG4iXSwibmFtZXMiOlsidXNlU2VsZWN0b3IiLCJOYXZCYXIiLCJuYXZiYXIiLCJzdGF0ZSIsImFwcCIsImxvZ28iLCJtZW51IiwiZGl2IiwiY2xhc3NOYW1lIiwiaW1nIiwic3JjIiwidWwiLCJsaSIsImEiLCJjb250YWN0IiwibGFuZyIsInRpdGxlIiwic2VsZWN0IiwiY3VycmVuY3kiLCJtYXAiLCJpdGVtIiwib3B0aW9uIiwidmFsdWUiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./components/NavBar.jsx\n");
-
-/***/ }),
-
-/***/ "./components/Numbers.jsx":
-/*!********************************!*\
-  !*** ./components/Numbers.jsx ***!
-  \********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"Numbers\": () => (/* binding */ Numbers)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n\nconst Numbers = ({ name , number  })=>{\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n        className: \"grid\",\n        children: [\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"span\", {\n                className: \"text-xs text-white \",\n                children: [\n                    name,\n                    \" \"\n                ]\n            }, void 0, true, {\n                fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\Numbers.jsx\",\n                lineNumber: 5,\n                columnNumber: 9\n            }, undefined),\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"span\", {\n                className: \"text-xs text-white m-0.5\",\n                children: [\n                    \" \",\n                    number,\n                    \" \"\n                ]\n            }, void 0, true, {\n                fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\Numbers.jsx\",\n                lineNumber: 6,\n                columnNumber: 9\n            }, undefined)\n        ]\n    }, void 0, true, {\n        fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\Numbers.jsx\",\n        lineNumber: 4,\n        columnNumber: 5\n    }, undefined);\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9jb21wb25lbnRzL051bWJlcnMuanN4LmpzIiwibWFwcGluZ3MiOiI7Ozs7OztBQUNBO0FBQU8sTUFBTUEsVUFBVSxDQUFFLEVBQUNDLEtBQUksRUFBRUMsT0FBTSxFQUFDLEdBQU07SUFDM0MscUJBQ0UsOERBQUNDO1FBQUlDLFdBQVU7OzBCQUNYLDhEQUFDQztnQkFBS0QsV0FBVTs7b0JBQXdCSDtvQkFBTTs7Ozs7OzswQkFDOUMsOERBQUNJO2dCQUFLRCxXQUFVOztvQkFBNEI7b0JBQUdGO29CQUFROzs7Ozs7Ozs7Ozs7O0FBRy9ELEVBQUMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly94Y2FyZXQvLi9jb21wb25lbnRzL051bWJlcnMuanN4PzhjZWIiXSwic291cmNlc0NvbnRlbnQiOlsiXHJcbmV4cG9ydCBjb25zdCBOdW1iZXJzID0gKCB7bmFtZSwgbnVtYmVyfSApID0+IHtcclxuICByZXR1cm4gKFxyXG4gICAgPGRpdiBjbGFzc05hbWU9XCJncmlkXCI+XHJcbiAgICAgICAgPHNwYW4gY2xhc3NOYW1lPVwidGV4dC14cyB0ZXh0LXdoaXRlIFwiID57bmFtZSB9IDwvc3Bhbj5cclxuICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJ0ZXh0LXhzIHRleHQtd2hpdGUgbS0wLjVcIiA+IHsgbnVtYmVyIH0gPC9zcGFuPlxyXG4gICAgPC9kaXY+XHJcbiAgKVxyXG59XHJcbiJdLCJuYW1lcyI6WyJOdW1iZXJzIiwibmFtZSIsIm51bWJlciIsImRpdiIsImNsYXNzTmFtZSIsInNwYW4iXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./components/Numbers.jsx\n");
-
-/***/ }),
-
-/***/ "./components/PreFooter.jsx":
-/*!**********************************!*\
-  !*** ./components/PreFooter.jsx ***!
-  \**********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"PreFooter\": () => (/* binding */ PreFooter)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ \"react-redux\");\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var react_device_detect__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-device-detect */ \"react-device-detect\");\n/* harmony import */ var react_device_detect__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_device_detect__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _Numbers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Numbers */ \"./components/Numbers.jsx\");\n/* harmony import */ var _SocialNetworks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./SocialNetworks */ \"./components/SocialNetworks.jsx\");\n/* harmony import */ var _hooks_useDeviceDetected__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../hooks/useDeviceDetected */ \"./hooks/useDeviceDetected.js\");\n\n\n\n\n\n\nconst PreFooter = ()=>{\n    const { movil , browser  } = (0,_hooks_useDeviceDetected__WEBPACK_IMPORTED_MODULE_5__.useDeviceDetected)();\n    const { prefooter  } = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useSelector)((state)=>state.app);\n    const { contactCenter , numbers  } = prefooter;\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n        className: \"mx-auto flex-col bg-storm-gray-300 p-3\",\n        children: [\n            movil ? /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_SocialNetworks__WEBPACK_IMPORTED_MODULE_4__.SocialNetworks, {}, void 0, false, {\n                fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\PreFooter.jsx\",\n                lineNumber: 18,\n                columnNumber: 22\n            }, undefined) : /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {}, void 0, false),\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                className: \"flex flex-col items-stretch\",\n                children: [\n                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                        className: \"flex justify-around\",\n                        children: [\n                            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"span\", {\n                                className: \"text-xs text-white\",\n                                children: [\n                                    contactCenter.title,\n                                    \" \"\n                                ]\n                            }, void 0, true, {\n                                fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\PreFooter.jsx\",\n                                lineNumber: 25,\n                                columnNumber: 21\n                            }, undefined),\n                            browser ? /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_SocialNetworks__WEBPACK_IMPORTED_MODULE_4__.SocialNetworks, {}, void 0, false, {\n                                fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\PreFooter.jsx\",\n                                lineNumber: 28,\n                                columnNumber: 33\n                            }, undefined) : /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {}, void 0, false)\n                        ]\n                    }, void 0, true, {\n                        fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\PreFooter.jsx\",\n                        lineNumber: 24,\n                        columnNumber: 17\n                    }, undefined),\n                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                        className: \"flex justify-around\",\n                        children: [\n                            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"span\", {\n                                className: \"text-xs text-white\",\n                                children: contactCenter.email\n                            }, void 0, false, {\n                                fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\PreFooter.jsx\",\n                                lineNumber: 35,\n                                columnNumber: 21\n                            }, undefined),\n                            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"span\", {\n                                className: \"text-xs text-white\"\n                            }, void 0, false, {\n                                fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\PreFooter.jsx\",\n                                lineNumber: 36,\n                                columnNumber: 21\n                            }, undefined)\n                        ]\n                    }, void 0, true, {\n                        fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\PreFooter.jsx\",\n                        lineNumber: 34,\n                        columnNumber: 17\n                    }, undefined),\n                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                        className: \"flex justify-around\",\n                        children: [\n                            numbers.map((item, index)=>{\n                                return index < 2 ? /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_Numbers__WEBPACK_IMPORTED_MODULE_3__.Numbers, {\n                                    name: item.name,\n                                    number: item.number\n                                }, index, false, {\n                                    fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\PreFooter.jsx\",\n                                    lineNumber: 44,\n                                    columnNumber: 39\n                                }, undefined) : /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {}, void 0, false);\n                            }),\n                            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"ul\", {\n                                children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"li\", {\n                                    children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"select\", {\n                                        className: \"text-xs bg-storm-gray-300 dark:text-white \",\n                                        children: numbers.map((item, i)=>{\n                                            return i > 1 ? /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"option\", {\n                                                className: \" hover:text-blue-500 cursor-pointer transition-colors duration-300\",\n                                                value: item.name,\n                                                children: [\n                                                    item.name,\n                                                    \" \",\n                                                    item.number,\n                                                    \" \"\n                                                ]\n                                            }, item.name, true, {\n                                                fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\PreFooter.jsx\",\n                                                lineNumber: 57,\n                                                columnNumber: 52\n                                            }, undefined) : /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {}, void 0, false);\n                                        })\n                                    }, void 0, false, {\n                                        fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\PreFooter.jsx\",\n                                        lineNumber: 52,\n                                        columnNumber: 29\n                                    }, undefined)\n                                }, void 0, false, {\n                                    fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\PreFooter.jsx\",\n                                    lineNumber: 51,\n                                    columnNumber: 25\n                                }, undefined)\n                            }, void 0, false, {\n                                fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\PreFooter.jsx\",\n                                lineNumber: 50,\n                                columnNumber: 21\n                            }, undefined)\n                        ]\n                    }, void 0, true, {\n                        fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\PreFooter.jsx\",\n                        lineNumber: 39,\n                        columnNumber: 17\n                    }, undefined)\n                ]\n            }, void 0, true, {\n                fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\PreFooter.jsx\",\n                lineNumber: 23,\n                columnNumber: 13\n            }, undefined)\n        ]\n    }, void 0, true, {\n        fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\PreFooter.jsx\",\n        lineNumber: 15,\n        columnNumber: 9\n    }, undefined);\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9jb21wb25lbnRzL1ByZUZvb3Rlci5qc3guanMiLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7OztBQUFBO0FBQXlDO0FBQzBDO0FBQy9DO0FBQ2M7QUFDYTtBQUl4RCxNQUFNUSxZQUFZLElBQU07SUFDM0IsTUFBTSxFQUFFQyxNQUFLLEVBQUVDLFFBQU8sRUFBRSxHQUFHSCwyRUFBaUJBO0lBQzVDLE1BQU0sRUFBRUksVUFBUyxFQUFFLEdBQUdYLHdEQUFXQSxDQUFDWSxDQUFBQSxRQUFTQSxNQUFNQyxHQUFHO0lBQ3BELE1BQU0sRUFBRUMsY0FBYSxFQUFFQyxRQUFPLEVBQUUsR0FBR0o7SUFDbkMscUJBRUksOERBQUNLO1FBQUlDLFdBQVU7O1lBR1ZSLHNCQUFRLDhEQUFDSCwyREFBY0E7Ozs7MENBQUssNklBQUs7MEJBS2xDLDhEQUFDVTtnQkFBSUMsV0FBVTs7a0NBQ1gsOERBQUNEO3dCQUFJQyxXQUFVOzswQ0FDWCw4REFBQ0M7Z0NBQUtELFdBQVU7O29DQUFzQkgsY0FBY0ssS0FBSztvQ0FBQzs7Ozs7Ozs0QkFHekRULHdCQUFXLDhEQUFDSiwyREFBY0E7Ozs7MERBQU0sNklBQUs7Ozs7Ozs7a0NBTTFDLDhEQUFDVTt3QkFBSUMsV0FBVTs7MENBQ1gsOERBQUNDO2dDQUFLRCxXQUFVOzBDQUF1QkgsY0FBY00sS0FBSzs7Ozs7OzBDQUMxRCw4REFBQ0Y7Z0NBQUtELFdBQVU7Ozs7Ozs7Ozs7OztrQ0FHcEIsOERBQUNEO3dCQUFJQyxXQUFVOzs0QkFFUEYsUUFBUU0sR0FBRyxDQUFDLENBQUNDLE1BQU1DLFFBQVU7Z0NBQ3pCLE9BQ0ksUUFBUyxrQkFDSCw4REFBQ2xCLDZDQUFPQTtvQ0FBYW1CLE1BQU1GLEtBQUtFLElBQUk7b0NBQUVDLFFBQVFILEtBQUtHLE1BQU07bUNBQTNDRjs7Ozs4REFDZCw2SUFBSzs0QkFHbkI7MENBRUosOERBQUNHOzBDQUNHLDRFQUFDQzs4Q0FDRyw0RUFBQ0M7d0NBQU9YLFdBQVU7a0RBRVZGLFFBQVFNLEdBQUcsQ0FBQyxDQUFDQyxNQUFNTyxJQUFNOzRDQUNyQixPQUNJLElBQUssa0JBQ0UsOERBQUNDO2dEQUFPYixXQUFVO2dEQUVEYyxPQUFPVCxLQUFLRSxJQUFJOztvREFBR0YsS0FBS0UsSUFBSTtvREFBQztvREFBRUYsS0FBS0csTUFBTTtvREFBQzs7K0NBQXRESCxLQUFLRSxJQUFJOzs7OzBFQUNoQiw2SUFBSzt3Q0FHbkI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFVcEMsRUFBQyIsInNvdXJjZXMiOlsid2VicGFjazovL3hjYXJldC8uL2NvbXBvbmVudHMvUHJlRm9vdGVyLmpzeD8yY2ZjIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IHVzZVNlbGVjdG9yIH0gZnJvbSBcInJlYWN0LXJlZHV4XCJcclxuaW1wb3J0IHsgQnJvd3NlclZpZXcsIE1vYmlsZVZpZXcsIGlzQnJvd3NlciwgaXNNb2JpbGUgfSBmcm9tICdyZWFjdC1kZXZpY2UtZGV0ZWN0JztcclxuaW1wb3J0IHsgTnVtYmVycyB9IGZyb20gXCIuL051bWJlcnNcIjtcclxuaW1wb3J0IHsgU29jaWFsTmV0d29ya3MgfSBmcm9tIFwiLi9Tb2NpYWxOZXR3b3Jrc1wiO1xyXG5pbXBvcnQgeyB1c2VEZXZpY2VEZXRlY3RlZCB9IGZyb20gXCIuLi9ob29rcy91c2VEZXZpY2VEZXRlY3RlZFwiO1xyXG5cclxuXHJcblxyXG5leHBvcnQgY29uc3QgUHJlRm9vdGVyID0gKCkgPT4ge1xyXG4gICAgY29uc3QgeyBtb3ZpbCwgYnJvd3NlciB9ID0gdXNlRGV2aWNlRGV0ZWN0ZWQoKTtcclxuICAgIGNvbnN0IHsgcHJlZm9vdGVyIH0gPSB1c2VTZWxlY3RvcihzdGF0ZSA9PiBzdGF0ZS5hcHApO1xyXG4gICAgY29uc3QgeyBjb250YWN0Q2VudGVyLCBudW1iZXJzIH0gPSBwcmVmb290ZXI7XHJcbiAgICByZXR1cm4gKFxyXG5cclxuICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cIm14LWF1dG8gZmxleC1jb2wgYmctc3Rvcm0tZ3JheS0zMDAgcC0zXCI+XHJcbiAgICAgICAgICAgXHJcbiAgICAgICAgICAge1xyXG4gICAgICAgICAgICAobW92aWwpID88U29jaWFsTmV0d29ya3MgLz46IDw+PC8+XHJcbiAgICAgICAgICAgfVxyXG4gICAgICAgICAgICAgICAgXHJcbiAgICAgICAgICAgXHJcblxyXG4gICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImZsZXggZmxleC1jb2wgaXRlbXMtc3RyZXRjaFwiID5cclxuICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZmxleCBqdXN0aWZ5LWFyb3VuZFwiPlxyXG4gICAgICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT1cInRleHQteHMgdGV4dC13aGl0ZVwiPntjb250YWN0Q2VudGVyLnRpdGxlfSA8L3NwYW4+XHJcbiAgICAgICAgICAgICAgICAgIFxyXG4gICAgICAgICAgICAgICAgICB7XHJcbiAgICAgICAgICAgICAgICAgICAgKGJyb3dzZXIpID8gPFNvY2lhbE5ldHdvcmtzIC8+IDogPD48Lz5cclxuICAgICAgICAgICAgICAgICAgfVxyXG5cclxuXHJcbiAgICAgICAgICAgICAgICA8L2Rpdj5cclxuXHJcbiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImZsZXgganVzdGlmeS1hcm91bmRcIj5cclxuICAgICAgICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJ0ZXh0LXhzIHRleHQtd2hpdGVcIiA+e2NvbnRhY3RDZW50ZXIuZW1haWx9PC9zcGFuPlxyXG4gICAgICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT1cInRleHQteHMgdGV4dC13aGl0ZVwiID48L3NwYW4+XHJcbiAgICAgICAgICAgICAgICA8L2Rpdj5cclxuXHJcbiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImZsZXgganVzdGlmeS1hcm91bmRcIj5cclxuICAgICAgICAgICAgICAgICAgICB7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIG51bWJlcnMubWFwKChpdGVtLCBpbmRleCkgPT4ge1xyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgcmV0dXJuIChcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAoaW5kZXggPCAyKVxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA/IDxOdW1iZXJzIGtleT17aW5kZXh9IG5hbWU9e2l0ZW0ubmFtZX0gbnVtYmVyPXtpdGVtLm51bWJlcn0gLz5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgOiA8PjwvPlxyXG5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIClcclxuICAgICAgICAgICAgICAgICAgICAgICAgfSlcclxuICAgICAgICAgICAgICAgICAgICB9XHJcbiAgICAgICAgICAgICAgICAgICAgPHVsPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICA8bGk+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8c2VsZWN0IGNsYXNzTmFtZT1cInRleHQteHMgIGJnLXN0b3JtLWdyYXktMzAwICBkYXJrOnRleHQtd2hpdGUgIFwiPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHtcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbnVtYmVycy5tYXAoKGl0ZW0sIGkpID0+IHtcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHJldHVybiAoXHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgKGkgPiAxKVxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA/ICA8b3B0aW9uIGNsYXNzTmFtZT1cIlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBob3Zlcjp0ZXh0LWJsdWUtNTAwIGN1cnNvci1wb2ludGVyIHRyYW5zaXRpb24tY29sb3JzIGR1cmF0aW9uLTMwMFwiXHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBrZXk9e2l0ZW0ubmFtZX0gdmFsdWU9e2l0ZW0ubmFtZX0+e2l0ZW0ubmFtZX0ge2l0ZW0ubnVtYmVyfSA8L29wdGlvbj5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgOiA8PjwvPlxyXG5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIClcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfSlcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L3NlbGVjdD5cclxuICAgICAgICAgICAgICAgICAgICAgICAgPC9saT5cclxuICAgICAgICAgICAgICAgICAgICA8L3VsPlxyXG5cclxuICAgICAgICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgICAgICA8L2Rpdj5cclxuICAgICAgICA8L2Rpdj5cclxuICAgIClcclxufVxyXG4iXSwibmFtZXMiOlsidXNlU2VsZWN0b3IiLCJCcm93c2VyVmlldyIsIk1vYmlsZVZpZXciLCJpc0Jyb3dzZXIiLCJpc01vYmlsZSIsIk51bWJlcnMiLCJTb2NpYWxOZXR3b3JrcyIsInVzZURldmljZURldGVjdGVkIiwiUHJlRm9vdGVyIiwibW92aWwiLCJicm93c2VyIiwicHJlZm9vdGVyIiwic3RhdGUiLCJhcHAiLCJjb250YWN0Q2VudGVyIiwibnVtYmVycyIsImRpdiIsImNsYXNzTmFtZSIsInNwYW4iLCJ0aXRsZSIsImVtYWlsIiwibWFwIiwiaXRlbSIsImluZGV4IiwibmFtZSIsIm51bWJlciIsInVsIiwibGkiLCJzZWxlY3QiLCJpIiwib3B0aW9uIiwidmFsdWUiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./components/PreFooter.jsx\n");
-
-/***/ }),
-
-/***/ "./components/Promotions.jsx":
-/*!***********************************!*\
-  !*** ./components/Promotions.jsx ***!
-  \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"Promotions\": () => (/* binding */ Promotions)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ \"react-redux\");\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! sweetalert2 */ \"sweetalert2\");\n/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_3__);\n\n\n\n\nconst Promotions = ()=>{\n    const { promotions  } = (0,react_redux__WEBPACK_IMPORTED_MODULE_2__.useSelector)((state)=>state.app);\n    const { title , logoPromo , Subtitle , paragraphs , button , imagePromo  } = promotions[0];\n    const onSubmit = ()=>{\n        const numPedido = Math.floor(Math.random() * 1000);\n        sweetalert2__WEBPACK_IMPORTED_MODULE_3___default().fire({\n            title: \"Codigo de compra \" + numPedido,\n            text: \"Resumen: \" + title,\n            icon: \"info\",\n            confirmButtonColor: \"#3085d6\"\n        }).then((result)=>{\n            if (result.isConfirmed) {\n                sweetalert2__WEBPACK_IMPORTED_MODULE_3___default().fire(\"Gracias por tu compra!\", \"\", \"success\");\n            }\n        });\n    };\n    //console.log({title, logoPromo, Subtitle, paragraphs, button, imagePromo } )\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n        className: \"m-3 sm:m-32\",\n        children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n            className: \"flex flex-col items-center shadow-xl xl:flex-row rounded-3xl\",\n            children: [\n                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"img\", {\n                    className: \"cursor-pointer rounded-3xl \",\n                    src: imagePromo,\n                    alt: \"\"\n                }, void 0, false, {\n                    fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\Promotions.jsx\",\n                    lineNumber: 33,\n                    columnNumber: 17\n                }, undefined),\n                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                    className: \"flex flex-col justify-between p-4 leading-normal\",\n                    children: [\n                        /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"img\", {\n                            className: \"m-2 py-5 w-48 \",\n                            src: logoPromo\n                        }, void 0, false, {\n                            fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\Promotions.jsx\",\n                            lineNumber: 35,\n                            columnNumber: 21\n                        }, undefined),\n                        /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"h5\", {\n                            className: \"m-2 xl:text-6xl text-3xl text-center \",\n                            children: [\n                                title,\n                                \" \"\n                            ]\n                        }, void 0, true, {\n                            fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\Promotions.jsx\",\n                            lineNumber: 36,\n                            columnNumber: 21\n                        }, undefined),\n                        /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"p\", {\n                            className: \"m-2 xl:text-3xl text-xl font-normal text-gray-900\",\n                            children: [\n                                Subtitle,\n                                \" \"\n                            ]\n                        }, void 0, true, {\n                            fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\Promotions.jsx\",\n                            lineNumber: 37,\n                            columnNumber: 21\n                        }, undefined),\n                        /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"p\", {\n                            className: \"m-2 xl:text-3xl text-xl font-normal text-gray-900\",\n                            children: [\n                                paragraphs,\n                                \" \"\n                            ]\n                        }, void 0, true, {\n                            fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\Promotions.jsx\",\n                            lineNumber: 38,\n                            columnNumber: 21\n                        }, undefined),\n                        /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"button\", {\n                            className: \"py-2.5 px-5 mr-2 m-2 text-xl bg-white rounded-lg border border-black hover:bg-gray-200 \",\n                            onClick: onSubmit,\n                            children: button.text\n                        }, void 0, false, {\n                            fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\Promotions.jsx\",\n                            lineNumber: 40,\n                            columnNumber: 21\n                        }, undefined)\n                    ]\n                }, void 0, true, {\n                    fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\Promotions.jsx\",\n                    lineNumber: 34,\n                    columnNumber: 17\n                }, undefined)\n            ]\n        }, void 0, true, {\n            fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\Promotions.jsx\",\n            lineNumber: 31,\n            columnNumber: 13\n        }, undefined)\n    }, void 0, false, {\n        fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\Promotions.jsx\",\n        lineNumber: 29,\n        columnNumber: 9\n    }, undefined);\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9jb21wb25lbnRzL1Byb21vdGlvbnMuanN4LmpzIiwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7OztBQUFBO0FBQXlCO0FBQ2dCO0FBQ1Y7QUFFeEIsTUFBTUcsYUFBYSxJQUFNO0lBQzVCLE1BQU0sRUFBRUMsV0FBVSxFQUFFLEdBQUdILHdEQUFXQSxDQUFDSSxDQUFBQSxRQUFTQSxNQUFNQyxHQUFHO0lBQ3JELE1BQU0sRUFBRUMsTUFBSyxFQUFFQyxVQUFTLEVBQUVDLFNBQVEsRUFBRUMsV0FBVSxFQUFFQyxPQUFNLEVBQUVDLFdBQVUsRUFBRSxHQUFHUixVQUFVLENBQUMsRUFBRTtJQUVwRixNQUFNUyxXQUFXLElBQUs7UUFDbkIsTUFBTUMsWUFBWUMsS0FBS0MsS0FBSyxDQUFDRCxLQUFLRSxNQUFNLEtBQUs7UUFDN0NmLHVEQUFTLENBQUM7WUFDVEssT0FBTyxzQkFBc0JPO1lBQzdCSyxNQUFNLGNBQWNaO1lBQ3BCYSxNQUFNO1lBQ05DLG9CQUFvQjtRQUN0QixHQUFHQyxJQUFJLENBQUMsQ0FBQ0MsU0FBVztZQUNsQixJQUFJQSxPQUFPQyxXQUFXLEVBQUU7Z0JBQ3RCdEIsdURBQVMsQ0FDUCwwQkFDQSxJQUNBO1lBRUosQ0FBQztRQUNIO0lBQ0Y7SUFFQSw2RUFBNkU7SUFDN0UscUJBQ0ksOERBQUN1QjtRQUFJQyxXQUFVO2tCQUVYLDRFQUFDRDtZQUFJQyxXQUFVOzs4QkFFWCw4REFBQ0M7b0JBQUlELFdBQVU7b0JBQThCRSxLQUFLaEI7b0JBQVlpQixLQUFJOzs7Ozs7OEJBQ2xFLDhEQUFDSjtvQkFBSUMsV0FBVTs7c0NBQ1gsOERBQUNDOzRCQUFJRCxXQUFVOzRCQUFpQkUsS0FBS3BCOzs7Ozs7c0NBQ3JDLDhEQUFDc0I7NEJBQUdKLFdBQVU7O2dDQUF5Q25CO2dDQUFNOzs7Ozs7O3NDQUM3RCw4REFBQ3dCOzRCQUFFTCxXQUFVOztnQ0FBcURqQjtnQ0FBUzs7Ozs7OztzQ0FDM0UsOERBQUNzQjs0QkFBRUwsV0FBVTs7Z0NBQXFEaEI7Z0NBQVc7Ozs7Ozs7c0NBRTdFLDhEQUFDQzs0QkFDQWUsV0FBVTs0QkFDVk0sU0FBU25CO3NDQUVMRixPQUFPUSxJQUFJOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQU9wQyxFQUFDIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8veGNhcmV0Ly4vY29tcG9uZW50cy9Qcm9tb3Rpb25zLmpzeD80YzlhIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCdcclxuaW1wb3J0IHsgdXNlU2VsZWN0b3IgfSBmcm9tICdyZWFjdC1yZWR1eCdcclxuaW1wb3J0IFN3YWwgZnJvbSAnc3dlZXRhbGVydDInO1xyXG5cclxuZXhwb3J0IGNvbnN0IFByb21vdGlvbnMgPSAoKSA9PiB7XHJcbiAgICBjb25zdCB7IHByb21vdGlvbnMgfSA9IHVzZVNlbGVjdG9yKHN0YXRlID0+IHN0YXRlLmFwcCk7XHJcbiAgICBjb25zdCB7IHRpdGxlLCBsb2dvUHJvbW8sIFN1YnRpdGxlLCBwYXJhZ3JhcGhzLCBidXR0b24sIGltYWdlUHJvbW8gfSA9IHByb21vdGlvbnNbMF07XHJcblxyXG4gICAgY29uc3Qgb25TdWJtaXQgPSAoKSA9PntcclxuICAgICAgIGNvbnN0IG51bVBlZGlkbyA9IE1hdGguZmxvb3IoTWF0aC5yYW5kb20oKSAqIDEwMDApO1xyXG4gICAgICAgU3dhbC5maXJlKHtcclxuICAgICAgICB0aXRsZTogJ0NvZGlnbyBkZSBjb21wcmEgJyArIG51bVBlZGlkbyxcclxuICAgICAgICB0ZXh0OiBcIlJlc3VtZW46IFwiICsgdGl0bGUsXHJcbiAgICAgICAgaWNvbjogJ2luZm8nLFxyXG4gICAgICAgIGNvbmZpcm1CdXR0b25Db2xvcjogJyMzMDg1ZDYnXHJcbiAgICAgIH0pLnRoZW4oKHJlc3VsdCkgPT4ge1xyXG4gICAgICAgIGlmIChyZXN1bHQuaXNDb25maXJtZWQpIHtcclxuICAgICAgICAgIFN3YWwuZmlyZShcclxuICAgICAgICAgICAgJ0dyYWNpYXMgcG9yIHR1IGNvbXByYSEnLFxyXG4gICAgICAgICAgICAnJyxcclxuICAgICAgICAgICAgJ3N1Y2Nlc3MnXHJcbiAgICAgICAgICApXHJcbiAgICAgICAgfVxyXG4gICAgICB9KVxyXG4gICAgfVxyXG5cclxuICAgIC8vY29uc29sZS5sb2coe3RpdGxlLCBsb2dvUHJvbW8sIFN1YnRpdGxlLCBwYXJhZ3JhcGhzLCBidXR0b24sIGltYWdlUHJvbW8gfSApXHJcbiAgICByZXR1cm4gKFxyXG4gICAgICAgIDxkaXYgY2xhc3NOYW1lPSdtLTMgc206bS0zMic+ey8qIG0tMzIgcGFyYSBkZXNrdG9wIC8vIG0tMyBwYXJhIG1vdmlsKi99XHJcblxyXG4gICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImZsZXggZmxleC1jb2wgaXRlbXMtY2VudGVyIHNoYWRvdy14bCB4bDpmbGV4LXJvdyAgcm91bmRlZC0zeGxcIj5cclxuICAgICAgICAgICAgICAgIFxyXG4gICAgICAgICAgICAgICAgPGltZyBjbGFzc05hbWU9XCJjdXJzb3ItcG9pbnRlciByb3VuZGVkLTN4bCBcIiBzcmM9e2ltYWdlUHJvbW99IGFsdD1cIlwiIC8+XHJcbiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImZsZXggZmxleC1jb2wganVzdGlmeS1iZXR3ZWVuIHAtNCBsZWFkaW5nLW5vcm1hbFwiPlxyXG4gICAgICAgICAgICAgICAgICAgIDxpbWcgY2xhc3NOYW1lPSdtLTIgcHktNSB3LTQ4ICcgc3JjPXtsb2dvUHJvbW99ICAvPlxyXG4gICAgICAgICAgICAgICAgICAgIDxoNSBjbGFzc05hbWU9XCJtLTIgeGw6dGV4dC02eGwgdGV4dC0zeGwgdGV4dC1jZW50ZXIgXCI+e3RpdGxlfSA8L2g1PlxyXG4gICAgICAgICAgICAgICAgICAgIDxwIGNsYXNzTmFtZT1cIm0tMiB4bDp0ZXh0LTN4bCB0ZXh0LXhsIGZvbnQtbm9ybWFsIHRleHQtZ3JheS05MDBcIj57U3VidGl0bGV9IDwvcD5cclxuICAgICAgICAgICAgICAgICAgICA8cCBjbGFzc05hbWU9XCJtLTIgeGw6dGV4dC0zeGwgdGV4dC14bCBmb250LW5vcm1hbCB0ZXh0LWdyYXktOTAwXCI+e3BhcmFncmFwaHN9IDwvcD5cclxuXHJcbiAgICAgICAgICAgICAgICAgICAgPGJ1dHRvbiBcclxuICAgICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPVwicHktMi41IHB4LTUgbXItMiBtLTIgdGV4dC14bCAgIGJnLXdoaXRlIHJvdW5kZWQtbGcgYm9yZGVyIGJvcmRlci1ibGFjayBob3ZlcjpiZy1ncmF5LTIwMCBcIlxyXG4gICAgICAgICAgICAgICAgICAgICBvbkNsaWNrPXtvblN1Ym1pdH1cclxuICAgICAgICAgICAgICAgICAgICAgPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICB7YnV0dG9uLnRleHR9XHJcbiAgICAgICAgICAgICAgICAgICAgPC9idXR0b24+XHJcblxyXG4gICAgICAgICAgICAgICAgPC9kaXY+XHJcbiAgICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgIDwvZGl2PlxyXG4gICAgKVxyXG59XHJcbiJdLCJuYW1lcyI6WyJSZWFjdCIsInVzZVNlbGVjdG9yIiwiU3dhbCIsIlByb21vdGlvbnMiLCJwcm9tb3Rpb25zIiwic3RhdGUiLCJhcHAiLCJ0aXRsZSIsImxvZ29Qcm9tbyIsIlN1YnRpdGxlIiwicGFyYWdyYXBocyIsImJ1dHRvbiIsImltYWdlUHJvbW8iLCJvblN1Ym1pdCIsIm51bVBlZGlkbyIsIk1hdGgiLCJmbG9vciIsInJhbmRvbSIsImZpcmUiLCJ0ZXh0IiwiaWNvbiIsImNvbmZpcm1CdXR0b25Db2xvciIsInRoZW4iLCJyZXN1bHQiLCJpc0NvbmZpcm1lZCIsImRpdiIsImNsYXNzTmFtZSIsImltZyIsInNyYyIsImFsdCIsImg1IiwicCIsIm9uQ2xpY2siXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./components/Promotions.jsx\n");
-
-/***/ }),
-
-/***/ "./components/SocialNetworks.jsx":
-/*!***************************************!*\
-  !*** ./components/SocialNetworks.jsx ***!
-  \***************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"SocialNetworks\": () => (/* binding */ SocialNetworks)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n\nconst SocialNetworks = ()=>{\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n        className: \"m-1 flex justify-center\",\n        children: [\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"a\", {\n                href: \"https://www.facebook.com/XcaretPark/\",\n                className: \"mr-6 text-gray-600\",\n                children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"svg\", {\n                    \"aria-hidden\": \"true\",\n                    focusable: \"false\",\n                    \"data-prefix\": \"fab\",\n                    \"data-icon\": \"facebook-f\",\n                    className: \"w-2.5\",\n                    role: \"img\",\n                    xmlns: \"http://www.w3.org/2000/svg\",\n                    viewBox: \"0 0 320 512\",\n                    children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"path\", {\n                        fill: \"currentColor\",\n                        d: \"M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z\"\n                    }, void 0, false, {\n                        fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\SocialNetworks.jsx\",\n                        lineNumber: 11,\n                        columnNumber: 21\n                    }, undefined)\n                }, void 0, false, {\n                    fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\SocialNetworks.jsx\",\n                    lineNumber: 8,\n                    columnNumber: 17\n                }, undefined)\n            }, void 0, false, {\n                fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\SocialNetworks.jsx\",\n                lineNumber: 7,\n                columnNumber: 13\n            }, undefined),\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"a\", {\n                href: \"https://twitter.com/XcaretPark?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor\",\n                className: \"mr-6 text-gray-600\",\n                children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"svg\", {\n                    \"aria-hidden\": \"true\",\n                    focusable: \"false\",\n                    \"data-prefix\": \"fab\",\n                    \"data-icon\": \"twitter\",\n                    className: \"w-4\",\n                    role: \"img\",\n                    xmlns: \"http://www.w3.org/2000/svg\",\n                    viewBox: \"0 0 512 512\",\n                    children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"path\", {\n                        fill: \"currentColor\",\n                        d: \"M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z\"\n                    }, void 0, false, {\n                        fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\SocialNetworks.jsx\",\n                        lineNumber: 19,\n                        columnNumber: 21\n                    }, undefined)\n                }, void 0, false, {\n                    fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\SocialNetworks.jsx\",\n                    lineNumber: 17,\n                    columnNumber: 17\n                }, undefined)\n            }, void 0, false, {\n                fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\SocialNetworks.jsx\",\n                lineNumber: 16,\n                columnNumber: 13\n            }, undefined),\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"a\", {\n                href: \"#!\",\n                className: \"mr-6 text-gray-600\",\n                children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"svg\", {\n                    \"aria-hidden\": \"true\",\n                    focusable: \"false\",\n                    \"data-prefix\": \"fab\",\n                    \"data-icon\": \"instagram\",\n                    className: \"w-3.5\",\n                    role: \"img\",\n                    xmlns: \"http://www.w3.org/2000/svg\",\n                    viewBox: \"0 0 448 512\",\n                    children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"path\", {\n                        fill: \"currentColor\",\n                        d: \"M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z\"\n                    }, void 0, false, {\n                        fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\SocialNetworks.jsx\",\n                        lineNumber: 28,\n                        columnNumber: 21\n                    }, undefined)\n                }, void 0, false, {\n                    fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\SocialNetworks.jsx\",\n                    lineNumber: 26,\n                    columnNumber: 17\n                }, undefined)\n            }, void 0, false, {\n                fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\SocialNetworks.jsx\",\n                lineNumber: 25,\n                columnNumber: 13\n            }, undefined)\n        ]\n    }, void 0, true, {\n        fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\SocialNetworks.jsx\",\n        lineNumber: 5,\n        columnNumber: 9\n    }, undefined);\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9jb21wb25lbnRzL1NvY2lhbE5ldHdvcmtzLmpzeC5qcyIsIm1hcHBpbmdzIjoiOzs7Ozs7QUFFQTtBQUFPLE1BQU1BLGlCQUFpQixJQUFNO0lBQ2hDLHFCQUNJLDhEQUFDQztRQUFJQyxXQUFVOzswQkFFWCw4REFBQ0M7Z0JBQUVDLE1BQUs7Z0JBQXVDRixXQUFVOzBCQUNyRCw0RUFBQ0c7b0JBQUlDLGVBQVk7b0JBQU9DLFdBQVU7b0JBQVFDLGVBQVk7b0JBQU1DLGFBQVU7b0JBQ2xFUCxXQUFVO29CQUFRUSxNQUFLO29CQUFNQyxPQUFNO29CQUNuQ0MsU0FBUTs4QkFDUiw0RUFBQ0M7d0JBQUtDLE1BQUs7d0JBQ1BDLEdBQUU7Ozs7Ozs7Ozs7Ozs7Ozs7MEJBSWQsOERBQUNaO2dCQUFFQyxNQUFLO2dCQUF3RkYsV0FBVTswQkFDdEcsNEVBQUNHO29CQUFJQyxlQUFZO29CQUFPQyxXQUFVO29CQUFRQyxlQUFZO29CQUFNQyxhQUFVO29CQUNsRVAsV0FBVTtvQkFBTVEsTUFBSztvQkFBTUMsT0FBTTtvQkFBNkJDLFNBQVE7OEJBQ3RFLDRFQUFDQzt3QkFBS0MsTUFBSzt3QkFDUEMsR0FBRTs7Ozs7Ozs7Ozs7Ozs7OzswQkFLZCw4REFBQ1o7Z0JBQUVDLE1BQUs7Z0JBQUtGLFdBQVU7MEJBQ25CLDRFQUFDRztvQkFBSUMsZUFBWTtvQkFBT0MsV0FBVTtvQkFBUUMsZUFBWTtvQkFBTUMsYUFBVTtvQkFDbEVQLFdBQVU7b0JBQVFRLE1BQUs7b0JBQU1DLE9BQU07b0JBQTZCQyxTQUFROzhCQUN4RSw0RUFBQ0M7d0JBQUtDLE1BQUs7d0JBQ1BDLEdBQUU7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFPMUIsRUFBQyIsInNvdXJjZXMiOlsid2VicGFjazovL3hjYXJldC8uL2NvbXBvbmVudHMvU29jaWFsTmV0d29ya3MuanN4Pzg3ZDgiXSwic291cmNlc0NvbnRlbnQiOlsiXHJcblxyXG5leHBvcnQgY29uc3QgU29jaWFsTmV0d29ya3MgPSAoKSA9PiB7XHJcbiAgICByZXR1cm4gKFxyXG4gICAgICAgIDxkaXYgY2xhc3NOYW1lPVwibS0xIGZsZXgganVzdGlmeS1jZW50ZXJcIj5cclxuXHJcbiAgICAgICAgICAgIDxhIGhyZWY9XCJodHRwczovL3d3dy5mYWNlYm9vay5jb20vWGNhcmV0UGFyay9cIiBjbGFzc05hbWU9XCJtci02IHRleHQtZ3JheS02MDBcIj5cclxuICAgICAgICAgICAgICAgIDxzdmcgYXJpYS1oaWRkZW49XCJ0cnVlXCIgZm9jdXNhYmxlPVwiZmFsc2VcIiBkYXRhLXByZWZpeD1cImZhYlwiIGRhdGEtaWNvbj1cImZhY2Vib29rLWZcIlxyXG4gICAgICAgICAgICAgICAgICAgIGNsYXNzTmFtZT1cInctMi41XCIgcm9sZT1cImltZ1wiIHhtbG5zPVwiaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmdcIlxyXG4gICAgICAgICAgICAgICAgICAgIHZpZXdCb3g9XCIwIDAgMzIwIDUxMlwiPlxyXG4gICAgICAgICAgICAgICAgICAgIDxwYXRoIGZpbGw9XCJjdXJyZW50Q29sb3JcIlxyXG4gICAgICAgICAgICAgICAgICAgICAgICBkPVwiTTI3OS4xNCAyODhsMTQuMjItOTIuNjZoLTg4Ljkxdi02MC4xM2MwLTI1LjM1IDEyLjQyLTUwLjA2IDUyLjI0LTUwLjA2aDQwLjQyVjYuMjZTMjYwLjQzIDAgMjI1LjM2IDBjLTczLjIyIDAtMTIxLjA4IDQ0LjM4LTEyMS4wOCAxMjQuNzJ2NzAuNjJIMjIuODlWMjg4aDgxLjM5djIyNGgxMDAuMTdWMjg4elwiPlxyXG4gICAgICAgICAgICAgICAgICAgIDwvcGF0aD5cclxuICAgICAgICAgICAgICAgIDwvc3ZnPlxyXG4gICAgICAgICAgICA8L2E+XHJcbiAgICAgICAgICAgIDxhIGhyZWY9XCJodHRwczovL3R3aXR0ZXIuY29tL1hjYXJldFBhcms/cmVmX3NyYz10d3NyYyU1RWdvb2dsZSU3Q3R3Y2FtcCU1RXNlcnAlN0N0d2dyJTVFYXV0aG9yXCIgY2xhc3NOYW1lPVwibXItNiB0ZXh0LWdyYXktNjAwXCI+XHJcbiAgICAgICAgICAgICAgICA8c3ZnIGFyaWEtaGlkZGVuPVwidHJ1ZVwiIGZvY3VzYWJsZT1cImZhbHNlXCIgZGF0YS1wcmVmaXg9XCJmYWJcIiBkYXRhLWljb249XCJ0d2l0dGVyXCJcclxuICAgICAgICAgICAgICAgICAgICBjbGFzc05hbWU9XCJ3LTRcIiByb2xlPVwiaW1nXCIgeG1sbnM9XCJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Z1wiIHZpZXdCb3g9XCIwIDAgNTEyIDUxMlwiPlxyXG4gICAgICAgICAgICAgICAgICAgIDxwYXRoIGZpbGw9XCJjdXJyZW50Q29sb3JcIlxyXG4gICAgICAgICAgICAgICAgICAgICAgICBkPVwiTTQ1OS4zNyAxNTEuNzE2Yy4zMjUgNC41NDguMzI1IDkuMDk3LjMyNSAxMy42NDUgMCAxMzguNzItMTA1LjU4MyAyOTguNTU4LTI5OC41NTggMjk4LjU1OC01OS40NTIgMC0xMTQuNjgtMTcuMjE5LTE2MS4xMzctNDcuMTA2IDguNDQ3Ljk3NCAxNi41NjggMS4yOTkgMjUuMzQgMS4yOTkgNDkuMDU1IDAgOTQuMjEzLTE2LjU2OCAxMzAuMjc0LTQ0LjgzMi00Ni4xMzItLjk3NS04NC43OTItMzEuMTg4LTk4LjExMi03Mi43NzIgNi40OTguOTc0IDEyLjk5NSAxLjYyNCAxOS44MTggMS42MjQgOS40MjEgMCAxOC44NDMtMS4zIDI3LjYxNC0zLjU3My00OC4wODEtOS43NDctODQuMTQzLTUxLjk4LTg0LjE0My0xMDIuOTg1di0xLjI5OWMxMy45NjkgNy43OTcgMzAuMjE0IDEyLjY3IDQ3LjQzMSAxMy4zMTktMjguMjY0LTE4Ljg0My00Ni43ODEtNTEuMDA1LTQ2Ljc4MS04Ny4zOTEgMC0xOS40OTIgNS4xOTctMzcuMzYgMTQuMjk0LTUyLjk1NCA1MS42NTUgNjMuNjc1IDEyOS4zIDEwNS4yNTggMjE2LjM2NSAxMDkuODA3LTEuNjI0LTcuNzk3LTIuNTk5LTE1LjkxOC0yLjU5OS0yNC4wNCAwLTU3LjgyOCA0Ni43ODItMTA0LjkzNCAxMDQuOTM0LTEwNC45MzQgMzAuMjEzIDAgNTcuNTAyIDEyLjY3IDc2LjY3IDMzLjEzNyAyMy43MTUtNC41NDggNDYuNDU2LTEzLjMyIDY2LjU5OS0yNS4zNC03Ljc5OCAyNC4zNjYtMjQuMzY2IDQ0LjgzMy00Ni4xMzIgNTcuODI3IDIxLjExNy0yLjI3MyA0MS41ODQtOC4xMjIgNjAuNDI2LTE2LjI0My0xNC4yOTIgMjAuNzkxLTMyLjE2MSAzOS4zMDgtNTIuNjI4IDU0LjI1M3pcIj5cclxuICAgICAgICAgICAgICAgICAgICA8L3BhdGg+XHJcbiAgICAgICAgICAgICAgICA8L3N2Zz5cclxuICAgICAgICAgICAgPC9hPlxyXG4gICAgICAgICAgXHJcbiAgICAgICAgICAgIDxhIGhyZWY9XCIjIVwiIGNsYXNzTmFtZT1cIm1yLTYgdGV4dC1ncmF5LTYwMFwiPlxyXG4gICAgICAgICAgICAgICAgPHN2ZyBhcmlhLWhpZGRlbj1cInRydWVcIiBmb2N1c2FibGU9XCJmYWxzZVwiIGRhdGEtcHJlZml4PVwiZmFiXCIgZGF0YS1pY29uPVwiaW5zdGFncmFtXCJcclxuICAgICAgICAgICAgICAgICAgICBjbGFzc05hbWU9XCJ3LTMuNVwiIHJvbGU9XCJpbWdcIiB4bWxucz1cImh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnXCIgdmlld0JveD1cIjAgMCA0NDggNTEyXCI+XHJcbiAgICAgICAgICAgICAgICAgICAgPHBhdGggZmlsbD1cImN1cnJlbnRDb2xvclwiXHJcbiAgICAgICAgICAgICAgICAgICAgICAgIGQ9XCJNMjI0LjEgMTQxYy02My42IDAtMTE0LjkgNTEuMy0xMTQuOSAxMTQuOXM1MS4zIDExNC45IDExNC45IDExNC45UzMzOSAzMTkuNSAzMzkgMjU1LjkgMjg3LjcgMTQxIDIyNC4xIDE0MXptMCAxODkuNmMtNDEuMSAwLTc0LjctMzMuNS03NC43LTc0LjdzMzMuNS03NC43IDc0LjctNzQuNyA3NC43IDMzLjUgNzQuNyA3NC43LTMzLjYgNzQuNy03NC43IDc0Ljd6bTE0Ni40LTE5NC4zYzAgMTQuOS0xMiAyNi44LTI2LjggMjYuOC0xNC45IDAtMjYuOC0xMi0yNi44LTI2LjhzMTItMjYuOCAyNi44LTI2LjggMjYuOCAxMiAyNi44IDI2Ljh6bTc2LjEgMjcuMmMtMS43LTM1LjktOS45LTY3LjctMzYuMi05My45LTI2LjItMjYuMi01OC0zNC40LTkzLjktMzYuMi0zNy0yLjEtMTQ3LjktMi4xLTE4NC45IDAtMzUuOCAxLjctNjcuNiA5LjktOTMuOSAzNi4xcy0zNC40IDU4LTM2LjIgOTMuOWMtMi4xIDM3LTIuMSAxNDcuOSAwIDE4NC45IDEuNyAzNS45IDkuOSA2Ny43IDM2LjIgOTMuOXM1OCAzNC40IDkzLjkgMzYuMmMzNyAyLjEgMTQ3LjkgMi4xIDE4NC45IDAgMzUuOS0xLjcgNjcuNy05LjkgOTMuOS0zNi4yIDI2LjItMjYuMiAzNC40LTU4IDM2LjItOTMuOSAyLjEtMzcgMi4xLTE0Ny44IDAtMTg0Ljh6TTM5OC44IDM4OGMtNy44IDE5LjYtMjIuOSAzNC43LTQyLjYgNDIuNi0yOS41IDExLjctOTkuNSA5LTEzMi4xIDlzLTEwMi43IDIuNi0xMzIuMS05Yy0xOS42LTcuOC0zNC43LTIyLjktNDIuNi00Mi42LTExLjctMjkuNS05LTk5LjUtOS0xMzIuMXMtMi42LTEwMi43IDktMTMyLjFjNy44LTE5LjYgMjIuOS0zNC43IDQyLjYtNDIuNiAyOS41LTExLjcgOTkuNS05IDEzMi4xLTlzMTAyLjctMi42IDEzMi4xIDljMTkuNiA3LjggMzQuNyAyMi45IDQyLjYgNDIuNiAxMS43IDI5LjUgOSA5OS41IDkgMTMyLjFzMi43IDEwMi43LTkgMTMyLjF6XCI+XHJcbiAgICAgICAgICAgICAgICAgICAgPC9wYXRoPlxyXG4gICAgICAgICAgICAgICAgPC9zdmc+XHJcbiAgICAgICAgICAgIDwvYT5cclxuICAgICAgICAgIFxyXG4gICAgICAgIDwvZGl2PlxyXG4gICAgKVxyXG59XHJcbiJdLCJuYW1lcyI6WyJTb2NpYWxOZXR3b3JrcyIsImRpdiIsImNsYXNzTmFtZSIsImEiLCJocmVmIiwic3ZnIiwiYXJpYS1oaWRkZW4iLCJmb2N1c2FibGUiLCJkYXRhLXByZWZpeCIsImRhdGEtaWNvbiIsInJvbGUiLCJ4bWxucyIsInZpZXdCb3giLCJwYXRoIiwiZmlsbCIsImQiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./components/SocialNetworks.jsx\n");
-
-/***/ }),
-
-/***/ "./components/movil/HeaderMovil.jsx":
-/*!******************************************!*\
-  !*** ./components/movil/HeaderMovil.jsx ***!
-  \******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"HeaderMovil\": () => (/* binding */ HeaderMovil)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ \"react-redux\");\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_1__);\n\n\nconst HeaderMovil = (props)=>{\n    const { header  } = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useSelector)((state)=>state.app);\n    const { h1 , discount , paragraphs  } = header;\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {\n        children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n            className: \"grid bg-gray-300 p-4 py-11\",\n            children: [\n                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"h1\", {\n                    className: \"text-center text-4xl m-5\",\n                    children: h1\n                }, void 0, false, {\n                    fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\movil\\\\HeaderMovil.jsx\",\n                    lineNumber: 10,\n                    columnNumber: 17\n                }, undefined),\n                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                    className: \"p-6\",\n                    children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"h1\", {\n                        className: \"text-center text-5xl\",\n                        children: discount\n                    }, void 0, false, {\n                        fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\movil\\\\HeaderMovil.jsx\",\n                        lineNumber: 15,\n                        columnNumber: 21\n                    }, undefined)\n                }, void 0, false, {\n                    fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\movil\\\\HeaderMovil.jsx\",\n                    lineNumber: 14,\n                    columnNumber: 17\n                }, undefined),\n                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"p\", {\n                    className: \"text-lg text-center m-2\",\n                    children: paragraphs\n                }, void 0, false, {\n                    fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\movil\\\\HeaderMovil.jsx\",\n                    lineNumber: 19,\n                    columnNumber: 17\n                }, undefined)\n            ]\n        }, void 0, true, {\n            fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\components\\\\movil\\\\HeaderMovil.jsx\",\n            lineNumber: 9,\n            columnNumber: 13\n        }, undefined)\n    }, void 0, false);\n};\nHeaderMovil.getInitialProps = async (ctx)=>{\n    return {};\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9jb21wb25lbnRzL21vdmlsL0hlYWRlck1vdmlsLmpzeC5qcyIsIm1hcHBpbmdzIjoiOzs7Ozs7OztBQUFBO0FBQXlDO0FBRWxDLE1BQU1DLGNBQWMsQ0FBQ0MsUUFBVTtJQUNsQyxNQUFNLEVBQUVDLE9BQU0sRUFBRSxHQUFHSCx3REFBV0EsQ0FBQ0ksQ0FBQUEsUUFBU0EsTUFBTUMsR0FBRztJQUNqRCxNQUFNLEVBQUVDLEdBQUUsRUFBRUMsU0FBUSxFQUFFQyxXQUFVLEVBQUUsR0FBR0w7SUFFckMscUJBQ0k7a0JBQ0ksNEVBQUNNO1lBQUlDLFdBQVU7OzhCQUNYLDhEQUFDSjtvQkFBR0ksV0FBVTs4QkFDVEo7Ozs7Ozs4QkFHTCw4REFBQ0c7b0JBQUlDLFdBQVU7OEJBQ1gsNEVBQUNKO3dCQUFHSSxXQUFVO2tDQUNUSDs7Ozs7Ozs7Ozs7OEJBR1QsOERBQUNJO29CQUFFRCxXQUFVOzhCQUNSRjs7Ozs7Ozs7Ozs7OztBQVNyQixFQUFDO0FBRURQLFlBQVlXLGVBQWUsR0FBRyxPQUFPQyxNQUFRO0lBR3pDLE9BQU8sQ0FBRTtBQUNYIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8veGNhcmV0Ly4vY29tcG9uZW50cy9tb3ZpbC9IZWFkZXJNb3ZpbC5qc3g/MjA1OCJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyB1c2VTZWxlY3RvciB9IGZyb20gXCJyZWFjdC1yZWR1eFwiXHJcblxyXG5leHBvcnQgY29uc3QgSGVhZGVyTW92aWwgPSAocHJvcHMpID0+IHtcclxuICAgIGNvbnN0IHsgaGVhZGVyIH0gPSB1c2VTZWxlY3RvcihzdGF0ZSA9PiBzdGF0ZS5hcHApO1xyXG4gICAgY29uc3QgeyBoMSwgZGlzY291bnQsIHBhcmFncmFwaHMgfSA9IGhlYWRlcjtcclxuXHJcbiAgICByZXR1cm4gKFxyXG4gICAgICAgIDw+XHJcbiAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZ3JpZCBiZy1ncmF5LTMwMCBwLTQgcHktMTFcIj5cclxuICAgICAgICAgICAgICAgIDxoMSBjbGFzc05hbWU9XCJ0ZXh0LWNlbnRlciB0ZXh0LTR4bCBtLTVcIj5cclxuICAgICAgICAgICAgICAgICAgICB7aDF9XHJcbiAgICAgICAgICAgICAgICA8L2gxPlxyXG5cclxuICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwicC02XCI+XHJcbiAgICAgICAgICAgICAgICAgICAgPGgxIGNsYXNzTmFtZT1cInRleHQtY2VudGVyIHRleHQtNXhsXCI+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIHtkaXNjb3VudH1cclxuICAgICAgICAgICAgICAgICAgICA8L2gxPlxyXG4gICAgICAgICAgICAgICAgPC9kaXY+XHJcbiAgICAgICAgICAgICAgICA8cCBjbGFzc05hbWU9XCJ0ZXh0LWxnIHRleHQtY2VudGVyIG0tMlwiPlxyXG4gICAgICAgICAgICAgICAgICAgIHtwYXJhZ3JhcGhzfVxyXG4gICAgICAgICAgICAgICAgPC9wPlxyXG4gICAgICAgICAgICAgICAgey8qIDxwIGNsYXNzTmFtZT1cInRleHQtY2VudGVyXCI+XHJcbiAgICAgICAgICAgICAgICAgICAge3BhcmFncmFwaHNbMV19XHJcbiAgICAgICAgICAgICAgICA8L3A+ICovfVxyXG5cclxuICAgICAgICAgICAgPC9kaXY+XHJcbiAgICAgICAgPC8+XHJcbiAgICApXHJcbn1cclxuXHJcbkhlYWRlck1vdmlsLmdldEluaXRpYWxQcm9wcyA9IGFzeW5jIChjdHgpID0+IHtcclxuICAgIFxyXG4gICBcclxuICAgIHJldHVybiB7IH1cclxuICB9Il0sIm5hbWVzIjpbInVzZVNlbGVjdG9yIiwiSGVhZGVyTW92aWwiLCJwcm9wcyIsImhlYWRlciIsInN0YXRlIiwiYXBwIiwiaDEiLCJkaXNjb3VudCIsInBhcmFncmFwaHMiLCJkaXYiLCJjbGFzc05hbWUiLCJwIiwiZ2V0SW5pdGlhbFByb3BzIiwiY3R4Il0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./components/movil/HeaderMovil.jsx\n");
-
-/***/ }),
-
-/***/ "./hooks/useDeviceDetected.js":
-/*!************************************!*\
-  !*** ./hooks/useDeviceDetected.js ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"useDeviceDetected\": () => (/* binding */ useDeviceDetected)\n/* harmony export */ });\n/* harmony import */ var react_device_detect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-device-detect */ \"react-device-detect\");\n/* harmony import */ var react_device_detect__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_device_detect__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);\n\n\nconst useDeviceDetected = ()=>{\n    const [movil, setmovil] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false);\n    const [browser, setBrowser] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false);\n    (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(()=>{\n        react_device_detect__WEBPACK_IMPORTED_MODULE_0__.isMobile ? setmovil(true) : setmovil(false);\n        react_device_detect__WEBPACK_IMPORTED_MODULE_0__.isBrowser ? setBrowser(true) : setBrowser(false);\n    }, []);\n    return {\n        movil,\n        browser\n    };\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9ob29rcy91c2VEZXZpY2VEZXRlY3RlZC5qcy5qcyIsIm1hcHBpbmdzIjoiOzs7Ozs7OztBQUEyRDtBQUNmO0FBR3JDLE1BQU1JLG9CQUFvQixJQUFNO0lBQ25DLE1BQU0sQ0FBQ0MsT0FBT0MsU0FBUyxHQUFHSCwrQ0FBUUEsQ0FBQyxLQUFLO0lBQ3hDLE1BQU0sQ0FBQ0ksU0FBU0MsV0FBVyxHQUFHTCwrQ0FBUUEsQ0FBQyxLQUFLO0lBRTVDRCxnREFBU0EsQ0FBQyxJQUFNO1FBQ1hELHlEQUFRQSxHQUFJSyxTQUFTLElBQUksSUFBSUEsU0FBUyxLQUFLLENBQUM7UUFDNUNOLDBEQUFTQSxHQUFHUSxXQUFXLElBQUksSUFBSUEsV0FBVyxLQUFLLENBQUM7SUFDbkQsR0FBRyxFQUFFO0lBRVQsT0FBTztRQUNMSDtRQUNBRTtJQUNGO0FBQ0YsRUFBQyIsInNvdXJjZXMiOlsid2VicGFjazovL3hjYXJldC8uL2hvb2tzL3VzZURldmljZURldGVjdGVkLmpzP2I1MWYiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgIGlzQnJvd3NlciwgaXNNb2JpbGUgfSBmcm9tICdyZWFjdC1kZXZpY2UtZGV0ZWN0JztcclxuaW1wb3J0IHsgdXNlRWZmZWN0LCB1c2VTdGF0ZSB9IGZyb20gJ3JlYWN0JztcclxuXHJcblxyXG5leHBvcnQgY29uc3QgdXNlRGV2aWNlRGV0ZWN0ZWQgPSAoKSA9PiB7XHJcbiAgICBjb25zdCBbbW92aWwsIHNldG1vdmlsXSA9IHVzZVN0YXRlKGZhbHNlKVxyXG4gICAgY29uc3QgW2Jyb3dzZXIsIHNldEJyb3dzZXJdID0gdXNlU3RhdGUoZmFsc2UpXHJcblxyXG4gICAgdXNlRWZmZWN0KCgpID0+IHtcclxuICAgICAgICAoaXNNb2JpbGUpID8gc2V0bW92aWwodHJ1ZSkgOiBzZXRtb3ZpbChmYWxzZSk7XHJcbiAgICAgICAgKGlzQnJvd3NlcikgP3NldEJyb3dzZXIodHJ1ZSkgOiBzZXRCcm93c2VyKGZhbHNlKTtcclxuICAgICAgfSwgW10pXHJcblxyXG4gIHJldHVybiB7XHJcbiAgICBtb3ZpbCxcclxuICAgIGJyb3dzZXIsXHJcbiAgfVxyXG59XHJcbiJdLCJuYW1lcyI6WyJpc0Jyb3dzZXIiLCJpc01vYmlsZSIsInVzZUVmZmVjdCIsInVzZVN0YXRlIiwidXNlRGV2aWNlRGV0ZWN0ZWQiLCJtb3ZpbCIsInNldG1vdmlsIiwiYnJvd3NlciIsInNldEJyb3dzZXIiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./hooks/useDeviceDetected.js\n");
-
-/***/ }),
-
-/***/ "./hooks/useLanguage.js":
-/*!******************************!*\
-  !*** ./hooks/useLanguage.js ***!
-  \******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"useLanguage\": () => (/* binding */ useLanguage)\n/* harmony export */ });\n/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! next/router */ \"next/router\");\n/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ \"react-redux\");\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _store_data_appSlice__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../store/data/appSlice */ \"./store/data/appSlice.js\");\n\n\n\nconst useLanguage = ()=>{\n    const dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useDispatch)();\n    const router = (0,next_router__WEBPACK_IMPORTED_MODULE_0__.useRouter)();\n    const { locale  } = router;\n    dispatch((0,_store_data_appSlice__WEBPACK_IMPORTED_MODULE_2__.onLanguage)(locale));\n    return {\n        locale\n    };\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9ob29rcy91c2VMYW5ndWFnZS5qcy5qcyIsIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7QUFBdUM7QUFDRztBQUNVO0FBRzdDLE1BQU1HLGNBQWMsSUFBTTtJQUMvQixNQUFNQyxXQUFXSCx3REFBV0E7SUFDNUIsTUFBTUksU0FBU0wsc0RBQVNBO0lBQ3hCLE1BQU0sRUFBRU0sT0FBTSxFQUFFLEdBQUdEO0lBRW5CRCxTQUFTRixnRUFBVUEsQ0FBQ0k7SUFFcEIsT0FBTztRQUNMQTtJQUNGO0FBQ0YsRUFBQyIsInNvdXJjZXMiOlsid2VicGFjazovL3hjYXJldC8uL2hvb2tzL3VzZUxhbmd1YWdlLmpzPzZkMzIiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgdXNlUm91dGVyIH0gZnJvbSAnbmV4dC9yb3V0ZXInXHJcbmltcG9ydCB7IHVzZURpc3BhdGNoIH0gZnJvbSAncmVhY3QtcmVkdXgnO1xyXG5pbXBvcnQgeyBvbkxhbmd1YWdlIH0gZnJvbSAnLi4vc3RvcmUvZGF0YS9hcHBTbGljZSc7XHJcblxyXG5cclxuZXhwb3J0IGNvbnN0IHVzZUxhbmd1YWdlID0gKCkgPT4ge1xyXG4gIGNvbnN0IGRpc3BhdGNoID0gdXNlRGlzcGF0Y2goKTtcclxuICBjb25zdCByb3V0ZXIgPSB1c2VSb3V0ZXIoKTtcclxuICBjb25zdCB7IGxvY2FsZSB9ID0gcm91dGVyO1xyXG5cclxuICBkaXNwYXRjaChvbkxhbmd1YWdlKGxvY2FsZSkpXHJcbiAgXHJcbiAgcmV0dXJuIHtcclxuICAgIGxvY2FsZSxcclxuICB9XHJcbn1cclxuIl0sIm5hbWVzIjpbInVzZVJvdXRlciIsInVzZURpc3BhdGNoIiwib25MYW5ndWFnZSIsInVzZUxhbmd1YWdlIiwiZGlzcGF0Y2giLCJyb3V0ZXIiLCJsb2NhbGUiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./hooks/useLanguage.js\n");
-
-/***/ }),
-
-/***/ "./pages/index.js":
-/*!************************!*\
-  !*** ./pages/index.js ***!
-  \************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/head */ \"next/head\");\n/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ \"react-redux\");\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _store_data_appSlice__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../store/data/appSlice */ \"./store/data/appSlice.js\");\n/* harmony import */ var isomorphic_fetch__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! isomorphic-fetch */ \"isomorphic-fetch\");\n/* harmony import */ var isomorphic_fetch__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(isomorphic_fetch__WEBPACK_IMPORTED_MODULE_4__);\n/* harmony import */ var _hooks_useLanguage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../hooks/useLanguage */ \"./hooks/useLanguage.js\");\n/* harmony import */ var _components_NavBar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/NavBar */ \"./components/NavBar.jsx\");\n/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/Footer */ \"./components/Footer.jsx\");\n/* harmony import */ var _components_PreFooter__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/PreFooter */ \"./components/PreFooter.jsx\");\n/* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/Header */ \"./components/Header.jsx\");\n/* harmony import */ var _components_movil_HeaderMovil__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/movil/HeaderMovil */ \"./components/movil/HeaderMovil.jsx\");\n/* harmony import */ var _components_Legals__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/Legals */ \"./components/Legals.jsx\");\n/* harmony import */ var _components_Promotions__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/Promotions */ \"./components/Promotions.jsx\");\n/* harmony import */ var _components_CarouselComponent__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../components/CarouselComponent */ \"./components/CarouselComponent.jsx\");\n/* harmony import */ var _hooks_useDeviceDetected__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../hooks/useDeviceDetected */ \"./hooks/useDeviceDetected.js\");\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nconst Home = (props)=>{\n    const { movil  } = (0,_hooks_useDeviceDetected__WEBPACK_IMPORTED_MODULE_14__.useDeviceDetected)();\n    const { locale  } = (0,_hooks_useLanguage__WEBPACK_IMPORTED_MODULE_5__.useLanguage)();\n    const dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_2__.useDispatch)();\n    switch(locale){\n        case \"en\":\n            dispatch((0,_store_data_appSlice__WEBPACK_IMPORTED_MODULE_3__.onLoadData)(props.data.en));\n            break;\n        case \"es\":\n            dispatch((0,_store_data_appSlice__WEBPACK_IMPORTED_MODULE_3__.onLoadData)(props.data.es));\n            break;\n        default:\n            dispatch((0,_store_data_appSlice__WEBPACK_IMPORTED_MODULE_3__.onLoadData)(props.data.es));\n            break;\n    }\n    if (movil) {\n        dispatch((0,_store_data_appSlice__WEBPACK_IMPORTED_MODULE_3__.onDeviceDetected)(\"isMobile\"));\n    } else {\n        dispatch((0,_store_data_appSlice__WEBPACK_IMPORTED_MODULE_3__.onDeviceDetected)(\"isBrowser\"));\n    }\n    return /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n        children: [\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)((next_head__WEBPACK_IMPORTED_MODULE_1___default()), {\n                children: [\n                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"title\", {\n                        children: \"Xcaret\"\n                    }, void 0, false, {\n                        fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\pages\\\\index.js\",\n                        lineNumber: 47,\n                        columnNumber: 9\n                    }, undefined),\n                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"meta\", {\n                        name: \"description\",\n                        content: \"Generated by create next app\"\n                    }, void 0, false, {\n                        fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\pages\\\\index.js\",\n                        lineNumber: 48,\n                        columnNumber: 9\n                    }, undefined),\n                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"link\", {\n                        rel: \"icon\",\n                        href: \"/favicon.ico\"\n                    }, void 0, false, {\n                        fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\pages\\\\index.js\",\n                        lineNumber: 49,\n                        columnNumber: 9\n                    }, undefined)\n                ]\n            }, void 0, true, {\n                fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\pages\\\\index.js\",\n                lineNumber: 46,\n                columnNumber: 7\n            }, undefined),\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_components_NavBar__WEBPACK_IMPORTED_MODULE_6__.NavBar, {}, void 0, false, {\n                fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\pages\\\\index.js\",\n                lineNumber: 52,\n                columnNumber: 7\n            }, undefined),\n            movil ? /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_components_movil_HeaderMovil__WEBPACK_IMPORTED_MODULE_10__.HeaderMovil, {}, void 0, false, {\n                fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\pages\\\\index.js\",\n                lineNumber: 54,\n                columnNumber: 19\n            }, undefined) : /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_components_Header__WEBPACK_IMPORTED_MODULE_9__.Header, {}, void 0, false, {\n                fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\pages\\\\index.js\",\n                lineNumber: 54,\n                columnNumber: 37\n            }, undefined),\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_components_Promotions__WEBPACK_IMPORTED_MODULE_12__.Promotions, {}, void 0, false, {\n                fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\pages\\\\index.js\",\n                lineNumber: 56,\n                columnNumber: 7\n            }, undefined),\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_components_CarouselComponent__WEBPACK_IMPORTED_MODULE_13__.CarouselComponent, {}, void 0, false, {\n                fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\pages\\\\index.js\",\n                lineNumber: 57,\n                columnNumber: 7\n            }, undefined),\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_components_Legals__WEBPACK_IMPORTED_MODULE_11__.Legals, {}, void 0, false, {\n                fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\pages\\\\index.js\",\n                lineNumber: 58,\n                columnNumber: 7\n            }, undefined),\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_components_PreFooter__WEBPACK_IMPORTED_MODULE_8__.PreFooter, {}, void 0, false, {\n                fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\pages\\\\index.js\",\n                lineNumber: 59,\n                columnNumber: 7\n            }, undefined),\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_components_Footer__WEBPACK_IMPORTED_MODULE_7__.Footer, {}, void 0, false, {\n                fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\pages\\\\index.js\",\n                lineNumber: 60,\n                columnNumber: 7\n            }, undefined)\n        ]\n    }, void 0, true, {\n        fileName: \"D:\\\\Proyects\\\\xcaret\\\\xcaret\\\\pages\\\\index.js\",\n        lineNumber: 45,\n        columnNumber: 5\n    }, undefined);\n};\nHome.getInitialProps = async (ctx)=>{\n    const res = await isomorphic_fetch__WEBPACK_IMPORTED_MODULE_4___default()(\"https://raw.githubusercontent.com/javialcocer/test-json/main/data.json\");\n    const resJSON = await res.json();\n    return {\n        data: resJSON\n    };\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Home);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9wYWdlcy9pbmRleC5qcy5qcyIsIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUNBO0FBQTRCO0FBRWM7QUFDNEI7QUFDbEM7QUFDZTtBQUNMO0FBQ0E7QUFDTTtBQUNOO0FBQ2dCO0FBQ2hCO0FBQ1E7QUFDYztBQUNMO0FBSS9ELE1BQU1lLE9BQU8sQ0FBQ0MsUUFBVTtJQUN0QixNQUFNLEVBQUNDLE1BQUssRUFBRSxHQUFHSCw0RUFBaUJBO0lBQ2xDLE1BQU0sRUFBRUksT0FBTSxFQUFFLEdBQUdiLCtEQUFXQTtJQUU5QixNQUFNYyxXQUFXbEIsd0RBQVdBO0lBRTVCLE9BQVFpQjtRQUNOLEtBQUs7WUFDSEMsU0FBU2hCLGdFQUFVQSxDQUFDYSxNQUFNSSxJQUFJLENBQUNDLEVBQUU7WUFDakMsS0FBTTtRQUNSLEtBQUs7WUFDSEYsU0FBU2hCLGdFQUFVQSxDQUFDYSxNQUFNSSxJQUFJLENBQUNFLEVBQUU7WUFDakMsS0FBTTtRQUNSO1lBQ0VILFNBQVNoQixnRUFBVUEsQ0FBQ2EsTUFBTUksSUFBSSxDQUFDRSxFQUFFO1lBQ2pDLEtBQU07SUFDVjtJQUVBLElBQUlMLE9BQU87UUFDVEUsU0FBU2pCLHNFQUFnQkEsQ0FBQztJQUM1QixPQUFPO1FBQ0xpQixTQUFTakIsc0VBQWdCQSxDQUFDO0lBQzVCLENBQUM7SUFFRCxxQkFDRSw4REFBQ3FCOzswQkFDQyw4REFBQ3ZCLGtEQUFJQTs7a0NBQ0gsOERBQUN3QjtrQ0FBTTs7Ozs7O2tDQUNQLDhEQUFDQzt3QkFBS0MsTUFBSzt3QkFBY0MsU0FBUTs7Ozs7O2tDQUNqQyw4REFBQ0M7d0JBQUtDLEtBQUk7d0JBQU9DLE1BQUs7Ozs7Ozs7Ozs7OzswQkFHeEIsOERBQUN4QixzREFBTUE7Ozs7O1lBRUpXLHNCQUFTLDhEQUFDUCx1RUFBV0E7Ozs7MENBQU0sOERBQUNELHNEQUFNQTs7Ozt5QkFBRzswQkFFeEMsOERBQUNHLCtEQUFVQTs7Ozs7MEJBQ1gsOERBQUNDLDZFQUFpQkE7Ozs7OzBCQUNsQiw4REFBQ0YsdURBQU1BOzs7OzswQkFDUCw4REFBQ0gsNERBQVNBOzs7OzswQkFDViw4REFBQ0Qsc0RBQU1BOzs7Ozs7Ozs7OztBQUliO0FBRUFRLEtBQUtnQixlQUFlLEdBQUcsT0FBT0MsTUFBUTtJQUNwQyxNQUFNQyxNQUFNLE1BQU03Qix1REFBS0EsQ0FBQztJQUN4QixNQUFNOEIsVUFBVSxNQUFNRCxJQUFJRSxJQUFJO0lBRTlCLE9BQU87UUFBRWYsTUFBTWM7SUFBUTtBQUN6QjtBQUdBLGlFQUFlbkIsSUFBSUEsRUFBQSIsInNvdXJjZXMiOlsid2VicGFjazovL3hjYXJldC8uL3BhZ2VzL2luZGV4LmpzP2JlZTciXSwic291cmNlc0NvbnRlbnQiOlsiXG5pbXBvcnQgSGVhZCBmcm9tICduZXh0L2hlYWQnXG5cbmltcG9ydCB7IHVzZURpc3BhdGNoIH0gZnJvbSAncmVhY3QtcmVkdXgnO1xuaW1wb3J0IHsgb25EZXZpY2VEZXRlY3RlZCwgb25Mb2FkRGF0YSB9IGZyb20gJy4uL3N0b3JlL2RhdGEvYXBwU2xpY2UnO1xuaW1wb3J0IGZldGNoIGZyb20gJ2lzb21vcnBoaWMtZmV0Y2gnXG5pbXBvcnQgeyB1c2VMYW5ndWFnZSB9IGZyb20gJy4uL2hvb2tzL3VzZUxhbmd1YWdlJztcbmltcG9ydCB7IE5hdkJhciB9IGZyb20gJy4uL2NvbXBvbmVudHMvTmF2QmFyJztcbmltcG9ydCB7IEZvb3RlciB9IGZyb20gJy4uL2NvbXBvbmVudHMvRm9vdGVyJztcbmltcG9ydCB7IFByZUZvb3RlciB9IGZyb20gJy4uL2NvbXBvbmVudHMvUHJlRm9vdGVyJztcbmltcG9ydCB7IEhlYWRlciB9IGZyb20gJy4uL2NvbXBvbmVudHMvSGVhZGVyJztcbmltcG9ydCB7IEhlYWRlck1vdmlsIH0gZnJvbSAnLi4vY29tcG9uZW50cy9tb3ZpbC9IZWFkZXJNb3ZpbCc7XG5pbXBvcnQgeyBMZWdhbHMgfSBmcm9tICcuLi9jb21wb25lbnRzL0xlZ2Fscyc7XG5pbXBvcnQgeyBQcm9tb3Rpb25zIH0gZnJvbSAnLi4vY29tcG9uZW50cy9Qcm9tb3Rpb25zJztcbmltcG9ydCB7IENhcm91c2VsQ29tcG9uZW50IH0gZnJvbSAnLi4vY29tcG9uZW50cy9DYXJvdXNlbENvbXBvbmVudCc7XG5pbXBvcnQgeyB1c2VEZXZpY2VEZXRlY3RlZCB9IGZyb20gJy4uL2hvb2tzL3VzZURldmljZURldGVjdGVkJztcblxuXG5cbmNvbnN0IEhvbWUgPSAocHJvcHMpID0+IHtcbiAgY29uc3Qge21vdmlsIH0gPSB1c2VEZXZpY2VEZXRlY3RlZCgpO1xuICBjb25zdCB7IGxvY2FsZSB9ID0gdXNlTGFuZ3VhZ2UoKTtcblxuICBjb25zdCBkaXNwYXRjaCA9IHVzZURpc3BhdGNoKCk7XG5cbiAgc3dpdGNoIChsb2NhbGUpIHtcbiAgICBjYXNlICdlbic6XG4gICAgICBkaXNwYXRjaChvbkxvYWREYXRhKHByb3BzLmRhdGEuZW4pKVxuICAgICAgYnJlYWs7XG4gICAgY2FzZSAnZXMnOlxuICAgICAgZGlzcGF0Y2gob25Mb2FkRGF0YShwcm9wcy5kYXRhLmVzKSlcbiAgICAgIGJyZWFrO1xuICAgIGRlZmF1bHQ6XG4gICAgICBkaXNwYXRjaChvbkxvYWREYXRhKHByb3BzLmRhdGEuZXMpKVxuICAgICAgYnJlYWs7XG4gIH1cblxuICBpZiAobW92aWwpIHtcbiAgICBkaXNwYXRjaChvbkRldmljZURldGVjdGVkKCdpc01vYmlsZScpKVxuICB9IGVsc2Uge1xuICAgIGRpc3BhdGNoKG9uRGV2aWNlRGV0ZWN0ZWQoJ2lzQnJvd3NlcicpKVxuICB9XG5cbiAgcmV0dXJuIChcbiAgICA8ZGl2ID5cbiAgICAgIDxIZWFkPlxuICAgICAgICA8dGl0bGU+WGNhcmV0PC90aXRsZT5cbiAgICAgICAgPG1ldGEgbmFtZT1cImRlc2NyaXB0aW9uXCIgY29udGVudD1cIkdlbmVyYXRlZCBieSBjcmVhdGUgbmV4dCBhcHBcIiAvPlxuICAgICAgICA8bGluayByZWw9XCJpY29uXCIgaHJlZj1cIi9mYXZpY29uLmljb1wiIC8+XG4gICAgICA8L0hlYWQ+XG5cbiAgICAgIDxOYXZCYXIgLz5cbiAgICAgIHtcbiAgICAgICAgKG1vdmlsKSA/IDxIZWFkZXJNb3ZpbCAvPiA6IDxIZWFkZXIgLz5cbiAgICAgIH1cbiAgICAgIDxQcm9tb3Rpb25zIC8+XG4gICAgICA8Q2Fyb3VzZWxDb21wb25lbnQgLz5cbiAgICAgIDxMZWdhbHMgLz5cbiAgICAgIDxQcmVGb290ZXIgLz5cbiAgICAgIDxGb290ZXIgLz5cblxuICAgIDwvZGl2PlxuICApXG59XG5cbkhvbWUuZ2V0SW5pdGlhbFByb3BzID0gYXN5bmMgKGN0eCkgPT4ge1xuICBjb25zdCByZXMgPSBhd2FpdCBmZXRjaCgnaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2phdmlhbGNvY2VyL3Rlc3QtanNvbi9tYWluL2RhdGEuanNvbicpO1xuICBjb25zdCByZXNKU09OID0gYXdhaXQgcmVzLmpzb24oKTtcblxuICByZXR1cm4geyBkYXRhOiByZXNKU09OIH1cbn1cblxuXG5leHBvcnQgZGVmYXVsdCBIb21lIl0sIm5hbWVzIjpbIkhlYWQiLCJ1c2VEaXNwYXRjaCIsIm9uRGV2aWNlRGV0ZWN0ZWQiLCJvbkxvYWREYXRhIiwiZmV0Y2giLCJ1c2VMYW5ndWFnZSIsIk5hdkJhciIsIkZvb3RlciIsIlByZUZvb3RlciIsIkhlYWRlciIsIkhlYWRlck1vdmlsIiwiTGVnYWxzIiwiUHJvbW90aW9ucyIsIkNhcm91c2VsQ29tcG9uZW50IiwidXNlRGV2aWNlRGV0ZWN0ZWQiLCJIb21lIiwicHJvcHMiLCJtb3ZpbCIsImxvY2FsZSIsImRpc3BhdGNoIiwiZGF0YSIsImVuIiwiZXMiLCJkaXYiLCJ0aXRsZSIsIm1ldGEiLCJuYW1lIiwiY29udGVudCIsImxpbmsiLCJyZWwiLCJocmVmIiwiZ2V0SW5pdGlhbFByb3BzIiwiY3R4IiwicmVzIiwicmVzSlNPTiIsImpzb24iXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./pages/index.js\n");
-
-/***/ }),
-
-/***/ "./store/data/appSlice.js":
-/*!********************************!*\
-  !*** ./store/data/appSlice.js ***!
-  \********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"appSlice\": () => (/* binding */ appSlice),\n/* harmony export */   \"onDeviceDetected\": () => (/* binding */ onDeviceDetected),\n/* harmony export */   \"onLanguage\": () => (/* binding */ onLanguage),\n/* harmony export */   \"onLoadData\": () => (/* binding */ onLoadData)\n/* harmony export */ });\n/* harmony import */ var _reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @reduxjs/toolkit */ \"@reduxjs/toolkit\");\n/* harmony import */ var _reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__);\n\nconst appSlice = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__.createSlice)({\n    name: \"app\",\n    initialState: {\n        sistemLanguage: null,\n        deviceDetected: null,\n        data: {},\n        navbar: null,\n        header: null,\n        promotions: null,\n        carousel: null,\n        buttonBook: null,\n        legals: null,\n        prefooter: null,\n        footer: null\n    },\n    reducers: {\n        onLanguage: (state, { payload  })=>{\n            state.sistemLanguage = payload;\n        },\n        onDeviceDetected: (state, { payload  })=>{\n            state.deviceDetected = payload;\n        },\n        onLoadData: (state, { payload  })=>{\n            // state.data = payload;\n            state.navbar = payload.navbar;\n            state.header = payload.header;\n            state.promotions = payload.promotions;\n            state.carousel = payload.carousel;\n            state.buttonBook = payload.buttonBook;\n            state.legals = payload.legals;\n            state.prefooter = payload.prefooter;\n            state.footer = payload.footer;\n        }\n    }\n});\n// Action creators are generated for each case reducer function\nconst { onLanguage , onDeviceDetected , onLoadData  } = appSlice.actions;\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zdG9yZS9kYXRhL2FwcFNsaWNlLmpzLmpzIiwibWFwcGluZ3MiOiI7Ozs7Ozs7OztBQUErQztBQUV4QyxNQUFNQyxXQUFXRCw2REFBV0EsQ0FBQztJQUNoQ0UsTUFBTTtJQUNOQyxjQUFjO1FBQ1ZDLGdCQUFpQixJQUFJO1FBQ3JCQyxnQkFBZ0IsSUFBSTtRQUNyQkMsTUFBTSxDQUFDO1FBQ1BDLFFBQVEsSUFBSTtRQUNaQyxRQUFRLElBQUk7UUFDWkMsWUFBWSxJQUFJO1FBQ2hCQyxVQUFVLElBQUk7UUFDZEMsWUFBWSxJQUFJO1FBQ2hCQyxRQUFPLElBQUk7UUFDWEMsV0FBVyxJQUFJO1FBQ2ZDLFFBQVEsSUFBSTtJQUNmO0lBQ0FDLFVBQVU7UUFDTkMsWUFBWSxDQUFDQyxPQUFPLEVBQUVDLFFBQU8sRUFBRSxHQUFJO1lBQy9CRCxNQUFNYixjQUFjLEdBQUdjO1FBQzNCO1FBQ0FDLGtCQUFrQixDQUFDRixPQUFPLEVBQUVDLFFBQU8sRUFBRSxHQUFJO1lBQ3JDRCxNQUFNWixjQUFjLEdBQUdhO1FBQzNCO1FBQ0FFLFlBQVksQ0FBQ0gsT0FBTyxFQUFFQyxRQUFPLEVBQUUsR0FBSTtZQUNoQyx3QkFBd0I7WUFDdkJELE1BQU1WLE1BQU0sR0FBR1csUUFBUVgsTUFBTTtZQUM3QlUsTUFBTVQsTUFBTSxHQUFHVSxRQUFRVixNQUFNO1lBQzdCUyxNQUFNUixVQUFVLEdBQUdTLFFBQVFULFVBQVU7WUFDckNRLE1BQU1QLFFBQVEsR0FBR1EsUUFBUVIsUUFBUTtZQUNqQ08sTUFBTU4sVUFBVSxHQUFHTyxRQUFRUCxVQUFVO1lBQ3JDTSxNQUFNTCxNQUFNLEdBQUdNLFFBQVFOLE1BQU07WUFDN0JLLE1BQU1KLFNBQVMsR0FBR0ssUUFBUUwsU0FBUztZQUNuQ0ksTUFBTUgsTUFBTSxHQUFHSSxRQUFRSixNQUFNO1FBRWpDO0lBQ0o7QUFDSixHQUFHO0FBR0gsK0RBQStEO0FBQ3hELE1BQU0sRUFBRUUsV0FBVSxFQUFFRyxpQkFBZ0IsRUFBRUMsV0FBVSxFQUFFLEdBQUduQixTQUFTb0IsT0FBTyxDQUFDIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8veGNhcmV0Ly4vc3RvcmUvZGF0YS9hcHBTbGljZS5qcz83OTg4Il0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IGNyZWF0ZVNsaWNlIH0gZnJvbSAnQHJlZHV4anMvdG9vbGtpdCc7XHJcblxyXG5leHBvcnQgY29uc3QgYXBwU2xpY2UgPSBjcmVhdGVTbGljZSh7XHJcbiAgICBuYW1lOiAnYXBwJyxcclxuICAgIGluaXRpYWxTdGF0ZToge1xyXG4gICAgICAgIHNpc3RlbUxhbmd1YWdlOiAgbnVsbCxcclxuICAgICAgICBkZXZpY2VEZXRlY3RlZDogbnVsbCxcclxuICAgICAgIGRhdGE6IHt9LFxyXG4gICAgICAgbmF2YmFyOiBudWxsLFxyXG4gICAgICAgaGVhZGVyOiBudWxsLFxyXG4gICAgICAgcHJvbW90aW9uczogbnVsbCxcclxuICAgICAgIGNhcm91c2VsOiBudWxsLFxyXG4gICAgICAgYnV0dG9uQm9vazogbnVsbCxcclxuICAgICAgIGxlZ2FsczpudWxsLFxyXG4gICAgICAgcHJlZm9vdGVyOiBudWxsLFxyXG4gICAgICAgZm9vdGVyOiBudWxsXHJcbiAgICB9LFxyXG4gICAgcmVkdWNlcnM6IHtcclxuICAgICAgICBvbkxhbmd1YWdlOiAoc3RhdGUsIHsgcGF5bG9hZCB9KSA9PntcclxuICAgICAgICAgICAgc3RhdGUuc2lzdGVtTGFuZ3VhZ2UgPSBwYXlsb2FkO1xyXG4gICAgICAgIH0sXHJcbiAgICAgICAgb25EZXZpY2VEZXRlY3RlZDogKHN0YXRlLCB7IHBheWxvYWQgfSkgPT57XHJcbiAgICAgICAgICAgIHN0YXRlLmRldmljZURldGVjdGVkID0gcGF5bG9hZDtcclxuICAgICAgICB9LFxyXG4gICAgICAgIG9uTG9hZERhdGE6IChzdGF0ZSwgeyBwYXlsb2FkIH0pID0+e1xyXG4gICAgICAgICAgIC8vIHN0YXRlLmRhdGEgPSBwYXlsb2FkO1xyXG4gICAgICAgICAgICBzdGF0ZS5uYXZiYXIgPSBwYXlsb2FkLm5hdmJhcjtcclxuICAgICAgICAgICAgc3RhdGUuaGVhZGVyID0gcGF5bG9hZC5oZWFkZXI7XHJcbiAgICAgICAgICAgIHN0YXRlLnByb21vdGlvbnMgPSBwYXlsb2FkLnByb21vdGlvbnM7XHJcbiAgICAgICAgICAgIHN0YXRlLmNhcm91c2VsID0gcGF5bG9hZC5jYXJvdXNlbDtcclxuICAgICAgICAgICAgc3RhdGUuYnV0dG9uQm9vayA9IHBheWxvYWQuYnV0dG9uQm9vaztcclxuICAgICAgICAgICAgc3RhdGUubGVnYWxzID0gcGF5bG9hZC5sZWdhbHM7XHJcbiAgICAgICAgICAgIHN0YXRlLnByZWZvb3RlciA9IHBheWxvYWQucHJlZm9vdGVyO1xyXG4gICAgICAgICAgICBzdGF0ZS5mb290ZXIgPSBwYXlsb2FkLmZvb3RlcjtcclxuICAgICAgICAgIFxyXG4gICAgICAgIH1cclxuICAgIH1cclxufSk7XHJcblxyXG5cclxuLy8gQWN0aW9uIGNyZWF0b3JzIGFyZSBnZW5lcmF0ZWQgZm9yIGVhY2ggY2FzZSByZWR1Y2VyIGZ1bmN0aW9uXHJcbmV4cG9ydCBjb25zdCB7IG9uTGFuZ3VhZ2UsIG9uRGV2aWNlRGV0ZWN0ZWQsIG9uTG9hZERhdGEgfSA9IGFwcFNsaWNlLmFjdGlvbnM7Il0sIm5hbWVzIjpbImNyZWF0ZVNsaWNlIiwiYXBwU2xpY2UiLCJuYW1lIiwiaW5pdGlhbFN0YXRlIiwic2lzdGVtTGFuZ3VhZ2UiLCJkZXZpY2VEZXRlY3RlZCIsImRhdGEiLCJuYXZiYXIiLCJoZWFkZXIiLCJwcm9tb3Rpb25zIiwiY2Fyb3VzZWwiLCJidXR0b25Cb29rIiwibGVnYWxzIiwicHJlZm9vdGVyIiwiZm9vdGVyIiwicmVkdWNlcnMiLCJvbkxhbmd1YWdlIiwic3RhdGUiLCJwYXlsb2FkIiwib25EZXZpY2VEZXRlY3RlZCIsIm9uTG9hZERhdGEiLCJhY3Rpb25zIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./store/data/appSlice.js\n");
-
-/***/ }),
-
-/***/ "@reduxjs/toolkit":
-/*!***********************************!*\
-  !*** external "@reduxjs/toolkit" ***!
-  \***********************************/
+/***/ 184:
 /***/ ((module) => {
 
 module.exports = require("@reduxjs/toolkit");
 
 /***/ }),
 
-/***/ "isomorphic-fetch":
-/*!***********************************!*\
-  !*** external "isomorphic-fetch" ***!
-  \***********************************/
-/***/ ((module) => {
-
-module.exports = require("isomorphic-fetch");
-
-/***/ }),
-
-/***/ "next/head":
-/*!****************************!*\
-  !*** external "next/head" ***!
-  \****************************/
-/***/ ((module) => {
-
-module.exports = require("next/head");
-
-/***/ }),
-
-/***/ "next/router":
-/*!******************************!*\
-  !*** external "next/router" ***!
-  \******************************/
-/***/ ((module) => {
-
-module.exports = require("next/router");
-
-/***/ }),
-
-/***/ "react":
-/*!************************!*\
-  !*** external "react" ***!
-  \************************/
+/***/ 689:
 /***/ ((module) => {
 
 module.exports = require("react");
 
 /***/ }),
 
-/***/ "react-device-detect":
-/*!**************************************!*\
-  !*** external "react-device-detect" ***!
-  \**************************************/
+/***/ 599:
 /***/ ((module) => {
 
 module.exports = require("react-device-detect");
 
 /***/ }),
 
-/***/ "react-redux":
-/*!******************************!*\
-  !*** external "react-redux" ***!
-  \******************************/
+/***/ 22:
 /***/ ((module) => {
 
 module.exports = require("react-redux");
 
 /***/ }),
 
-/***/ "react/jsx-dev-runtime":
-/*!****************************************!*\
-  !*** external "react/jsx-dev-runtime" ***!
-  \****************************************/
+/***/ 997:
 /***/ ((module) => {
 
-module.exports = require("react/jsx-dev-runtime");
-
-/***/ }),
-
-/***/ "sweetalert2":
-/*!******************************!*\
-  !*** external "sweetalert2" ***!
-  \******************************/
-/***/ ((module) => {
-
-module.exports = require("sweetalert2");
+module.exports = require("react/jsx-runtime");
 
 /***/ })
 
@@ -260,7 +755,7 @@ module.exports = require("sweetalert2");
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = (__webpack_exec__("./pages/index.js"));
+var __webpack_exports__ = __webpack_require__.X(0, [23], () => (__webpack_exec__(188)));
 module.exports = __webpack_exports__;
 
 })();
