@@ -1,9 +1,28 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import Swal from 'sweetalert2';
 
 export const Promotions = () => {
     const { promotions } = useSelector(state => state.app);
     const { title, logoPromo, Subtitle, paragraphs, button, imagePromo } = promotions[0];
+
+    const onSubmit = () =>{
+       const numPedido = Math.floor(Math.random() * 1000);
+       Swal.fire({
+        title: 'Codigo de compra ' + numPedido,
+        text: "Resumen: " + title,
+        icon: 'info',
+        confirmButtonColor: '#3085d6'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire(
+            'Gracias por tu compra!',
+            '',
+            'success'
+          )
+        }
+      })
+    }
 
     //console.log({title, logoPromo, Subtitle, paragraphs, button, imagePromo } )
     return (
@@ -18,7 +37,10 @@ export const Promotions = () => {
                     <p className="m-2 xl:text-3xl text-xl font-normal text-gray-900">{Subtitle} </p>
                     <p className="m-2 xl:text-3xl text-xl font-normal text-gray-900">{paragraphs} </p>
 
-                    <button className="py-2.5 px-5 mr-2 m-2 text-xl   bg-white rounded-lg border border-black hover:bg-gray-200 " >
+                    <button 
+                     className="py-2.5 px-5 mr-2 m-2 text-xl   bg-white rounded-lg border border-black hover:bg-gray-200 "
+                     onClick={onSubmit}
+                     >
                         {button.text}
                     </button>
 
